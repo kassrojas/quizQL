@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
+const Category = require('./Category');
 
-const triviaQuizSchema = new Schema({
+const quizSchema = new Schema({
   category: {
     type: Schema.Types.ObjectId,
     ref: 'category'
@@ -21,6 +22,6 @@ const triviaQuizSchema = new Schema({
   }
 })
 
-const TriviaQuiz = model('TriviaQuiz', triviaQuizSchema);
+const Quiz = model('quiz', quizSchema);
 
-module.exports = TriviaQuiz;
+module.exports = Quiz;
