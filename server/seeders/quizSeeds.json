@@ -1,0 +1,602 @@
+[
+  {
+    "category": "Entertainment: Cartoon & Animations",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who was the villain of &#039;&#039;The Lion King&#039;&#039;?",
+    "correct_answer": "Scar",
+    "incorrect_answers": [
+      "Fred",
+      "Jafar",
+      "Vada"
+    ]
+  },
+  {
+    "category": "Entertainment: Film",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of the following movies was not based on a novel by Stephen King? ",
+    "correct_answer": "The Thing",
+    "incorrect_answers": [
+      "Carrie",
+      "Misery",
+      "The Green Mile"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of the following authors was not born in England? ",
+    "correct_answer": "Arthur Conan Doyle",
+    "incorrect_answers": [
+      "Graham Greene",
+      "H G Wells",
+      "Arthur C Clarke"
+    ]
+  },
+  {
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Pianist Fr&eacute;d&eacute;ric Chopin was a composer of which musical era?",
+    "correct_answer": "Romantic",
+    "incorrect_answers": [
+      "Classic",
+      "Baroque",
+      "Renaissance"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In which country&#039;s version of Half-Life are the HECU Marines replaced with robots?",
+    "correct_answer": "Germany",
+    "incorrect_answers": [
+      "Japan",
+      "China",
+      "France"
+    ]
+  },
+  {
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "All of the following are classified as Finno-Ugric languages EXCEPT:",
+    "correct_answer": "Samoyedic",
+    "incorrect_answers": [
+      "Hungarian",
+      "Finnish",
+      "Estonian"
+    ]
+  },
+  {
+    "category": "Mythology",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of the following Mesopotamian mythological figures was NOT a deity?",
+    "correct_answer": "Enkidu",
+    "incorrect_answers": [
+      "Enki",
+      "Enlil",
+      "Enkimdu"
+    ]
+  },
+  {
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What was the name given to Android 4.3?",
+    "correct_answer": "Jelly Bean",
+    "incorrect_answers": [
+      "Lollipop",
+      "Nutella",
+      "Froyo"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Pok&eacute;mon Go is a location-based augmented reality game developed and published by which company?",
+    "correct_answer": "Niantic",
+    "incorrect_answers": [
+      "Rovio",
+      "Zynga",
+      "Supercell"
+    ]
+  },
+  {
+    "category": "Entertainment: Comics",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the name of the comic about a young boy, and a tiger who is actually a stuffed animal?",
+    "correct_answer": "Calvin and Hobbes",
+    "incorrect_answers": [
+      "Winnie the Pooh",
+      "Albert and Pogo",
+      "Peanuts"
+    ]
+  },
+  {
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which song by Swedish electronic musician Avicii samples the song &quot;Something&#039;s Got A Hold On Me&quot; by Etta James?",
+    "correct_answer": "Levels",
+    "incorrect_answers": [
+      "Fade Into Darkness",
+      "Silhouettes",
+      "Seek Bromance"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In the game &quot;Overwatch,&quot; what are the names of the two Australian criminals from the Junkers faction?",
+    "correct_answer": "Junkrat and Roadhog",
+    "incorrect_answers": [
+      "Roadrat and Junkhog",
+      "Ana and Pharah",
+      "McCree and Deadeye"
+    ]
+  },
+  {
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In the server hosting industry IaaS stands for...",
+    "correct_answer": "Infrastructure as a Service",
+    "incorrect_answers": [
+      "Internet as a Service",
+      "Internet and a Server",
+      "Infrastructure as a Server"
+    ]
+  },
+  {
+    "category": "Mythology",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which Greek &amp; Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?",
+    "correct_answer": "Apollo",
+    "incorrect_answers": [
+      "Aphrodite",
+      "Artemis",
+      "Athena"
+    ]
+  },
+  {
+    "category": "Science & Nature",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does the yellow diamond on the NFPA 704 fire diamond represent?",
+    "correct_answer": "Reactivity",
+    "incorrect_answers": [
+      "Health",
+      "Flammability",
+      "Radioactivity"
+    ]
+  },
+  {
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What nationality was sultan Saladin?",
+    "correct_answer": "Kurdish",
+    "incorrect_answers": [
+      "Arab",
+      "Egyptian",
+      "Syrian"
+    ]
+  },
+  {
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What were the first states to break away from Yugoslavia?",
+    "correct_answer": "Slovenia, Croatia",
+    "incorrect_answers": [
+      "Macedonia, Montenegro",
+      "Slovenia, Macedonia",
+      "Montenegro, Slovenia"
+    ]
+  },
+  {
+    "category": "Entertainment: Film",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which actor plays Obi-Wan Kenobi in Star Wars Episodes I-lll?",
+    "correct_answer": "Ewan McGregor",
+    "incorrect_answers": [
+      "Alec Guinness",
+      "Hayden Christensen",
+      "Liam Neeson"
+    ]
+  },
+  {
+    "category": "Celebrities",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is generally considered to be William Shakespeare&#039;s birth date?",
+    "correct_answer": "April 23rd, 1564",
+    "incorrect_answers": [
+      "July 4th, 1409",
+      "September 29th, 1699",
+      "December 1st, 1750"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In the game The World Ends With You, all of these characters act as a game partner with Neku for a week except:",
+    "correct_answer": "Rhyme",
+    "incorrect_answers": [
+      "Shiki",
+      "Joshua",
+      "Beat"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which Elite Four member from the first generation of Pok&eacute;mon became the champion in the next generation?",
+    "correct_answer": "Lance",
+    "incorrect_answers": [
+      "Agatha",
+      "Bruno",
+      "Lorelei"
+    ]
+  },
+  {
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How fast is USB 3.1 Gen 2 theoretically?",
+    "correct_answer": "10 Gb/s",
+    "incorrect_answers": [
+      "5 Gb/s",
+      "8 Gb/s",
+      "1 Gb/s"
+    ]
+  },
+  {
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "&quot;Lift Your Spirit&quot; is an album by which artist?",
+    "correct_answer": "Aloe Blacc",
+    "incorrect_answers": [
+      "Lena Meyer-Landrut",
+      "Stevie Wonder",
+      "Taylor Swift"
+    ]
+  },
+  {
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the capital of the US State of New York?",
+    "correct_answer": "Albany",
+    "incorrect_answers": [
+      "Buffalo",
+      "New York",
+      "Rochester"
+    ]
+  },
+  {
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the last song on the first Panic! At the Disco album?",
+    "correct_answer": "Build God, Then We&#039;ll Talk",
+    "incorrect_answers": [
+      "Nails for Breakfast, Tacks for Snacks",
+      "I Write Sins Not Tragedies",
+      "Lying Is The Most Fun A Girl Can Have Without Taking Her Clothes Off"
+    ]
+  },
+  {
+    "category": "Celebrities",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Where was Kanye West born?",
+    "correct_answer": "Atlanta, Georgia",
+    "incorrect_answers": [
+      "Chicago, Illinois",
+      "Los Angeles, California",
+      "Detroit, Michigan"
+    ]
+  },
+  {
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which historical conflict killed the most people?",
+    "correct_answer": "World War II",
+    "incorrect_answers": [
+      "Taiping Rebellion",
+      "Three Kingdoms War",
+      "Mongol conquests"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In Super Smash Bros. for Nintendo 3DS and Nintendo Wii U, who was the sixth fighter to be added to the game post-launch?",
+    "correct_answer": "Corrin",
+    "incorrect_answers": [
+      "Cloud",
+      "Bayonnetta",
+      "Ryu"
+    ]
+  },
+  {
+    "category": "Sports",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What year did the New Orleans Saints win the Super Bowl?",
+    "correct_answer": "2010",
+    "incorrect_answers": [
+      "2008",
+      "2009",
+      "2011"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of these book series is by James Patterson?",
+    "correct_answer": "Maximum Ride",
+    "incorrect_answers": [
+      "Harry Potter",
+      "The Legend of Xanth",
+      "The Bartemaeus Trilogy"
+    ]
+  },
+  {
+    "category": "Entertainment: Television",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In season one of the Netflix political drama &quot;House of Cards&quot;, what government position does Frank Underwood hold?",
+    "correct_answer": "House Majority Whip",
+    "incorrect_answers": [
+      "Attorney General",
+      "President",
+      "Chief of Staff"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "&quot;Minecraft&quot; was released from beta in 2011 during a convention held in which city?",
+    "correct_answer": "Las Vegas",
+    "incorrect_answers": [
+      "Paris",
+      "Bellevue",
+      "London"
+    ]
+  },
+  {
+    "category": "Science & Nature",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Burning which of these metals will produce a bright white flame?",
+    "correct_answer": "Magnesium",
+    "incorrect_answers": [
+      "Copper",
+      "Lithium",
+      "Lead"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Who developed the 2016 farming RPG &quot;Stardew Valley&quot;?",
+    "correct_answer": "Eric Barone",
+    "incorrect_answers": [
+      "Daisuke Amaya",
+      "Jasper Byrne",
+      "Lucas Pope"
+    ]
+  },
+  {
+    "category": "Sports",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Who won the 2015 College Football Playoff (CFP) National Championship? ",
+    "correct_answer": "Ohio State Buckeyes",
+    "incorrect_answers": [
+      "Alabama Crimson Tide",
+      "Clemson Tigers",
+      "Wisconsin Badgers"
+    ]
+  },
+  {
+    "category": "Entertainment: Film",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which former Star Trek actor directed Three Men and a Baby (1987)?",
+    "correct_answer": "Leonard Nimoy",
+    "incorrect_answers": [
+      "William Shatner",
+      "George Takei",
+      "James Doohan"
+    ]
+  },
+  {
+    "category": "Entertainment: Japanese Anime & Manga",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which animation studio produced &quot;Log Horizon&quot;?",
+    "correct_answer": "Satelite",
+    "incorrect_answers": [
+      "Sunrise",
+      "Xebec",
+      "Production I.G"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Alice in Wonderland, what is the name of Alice&#039;s kitten?",
+    "correct_answer": "Dinah",
+    "incorrect_answers": [
+      "Oscar",
+      "Heath",
+      "Smokey"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the hardest possible difficulty in &quot;Deus Ex: Mankind Divided&quot;?",
+    "correct_answer": "I Never Asked For This",
+    "incorrect_answers": [
+      "Nightmare",
+      "Extreme",
+      "Guru"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which novel by John Grisham was conceived on a road trip to Florida while thinking about stolen books with his wife?",
+    "correct_answer": "Camino Island",
+    "incorrect_answers": [
+      "Rogue Lawyer",
+      "Gray Mountain",
+      "The Litigators"
+    ]
+  },
+  {
+    "category": "Entertainment: Cartoon & Animations",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In the 1968 Cartoon Show &quot;Wacky Races&quot; what was the name of cavemen duo who rode in The Boulder Mobile?",
+    "correct_answer": "The Slag Brothers",
+    "incorrect_answers": [
+      "The Slate Brothers",
+      "The Rock Brothers",
+      "The Stone Brothers"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What character is NOT apart of the Grand Theft Auto series?",
+    "correct_answer": "Michael Cardenas",
+    "incorrect_answers": [
+      "Packie McReary",
+      "Tommy Vercetti",
+      "Lester Crest"
+    ]
+  },
+  {
+    "category": "Animals",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "How many teeth does an adult rabbit have?",
+    "correct_answer": "28",
+    "incorrect_answers": [
+      "30",
+      "26",
+      "24"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Overwatch, what is L&uacute;cio&#039;s full name?",
+    "correct_answer": "L&uacute;cio Correia Dos Santos",
+    "incorrect_answers": [
+      "L&uacute;cio Luiz L&oacute;s Guilherme",
+      "L&uacute;cio Jo&atilde;o Lucas",
+      "L&uacute;cio Chupar Prima"
+    ]
+  },
+  {
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the longest river in Europe?",
+    "correct_answer": "Volga",
+    "incorrect_answers": [
+      "Danube",
+      "Rhine",
+      "Thames"
+    ]
+  },
+  {
+    "category": "Science & Nature",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Dry ice is the solid form of what substance?",
+    "correct_answer": "Carbon dioxide",
+    "incorrect_answers": [
+      "Nitrogen",
+      "Ammonia",
+      "Oxygen"
+    ]
+  },
+  {
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What does the United States of America celebrate during the 4th of July?",
+    "correct_answer": "The signing of the Declaration of Independence",
+    "incorrect_answers": [
+      "The anniversary of the Battle of Gettysburg",
+      "The crossing of the Delaware River",
+      "The ratification of the Constitution"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What was Sir Handel&#039;s original name in &quot;The Railway Series&quot; and it&#039;s animated counterpart &quot;Thomas and Friends?&quot;",
+    "correct_answer": "Falcon",
+    "incorrect_answers": [
+      "Eagle",
+      "Kyte",
+      "Swallow"
+    ]
+  },
+  {
+    "category": "Science & Nature",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How old is the universe?",
+    "correct_answer": "13.8 Billion Years",
+    "incorrect_answers": [
+      "4.5 Billion Years",
+      "7.9 Billion Years",
+      "16.2 Billion Years"
+    ]
+  },
+  {
+    "category": "Sports",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which English football team is nicknamed &#039;The Tigers&#039;?",
+    "correct_answer": "Hull City",
+    "incorrect_answers": [
+      "Cardiff City",
+      "Bristol City",
+      "Manchester City"
+    ]
+  }
+]
