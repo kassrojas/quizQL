@@ -1,10 +1,9 @@
 const { Schema, model } = require('mongoose');
-const Category = require('./Category');
 
-const quizSchema = new Schema({
+const questionSchema = new Schema({
   category: {
-    type: Schema.Types.ObjectId,
-    ref: 'category'
+    type: String,
+    required: true
   },
   type: {
     type: String,
@@ -22,6 +21,6 @@ const quizSchema = new Schema({
   }
 })
 
-const Quiz = model('quiz', quizSchema);
+const Question = model('question', questionSchema);
 
-module.exports = Quiz;
+module.exports = Question;

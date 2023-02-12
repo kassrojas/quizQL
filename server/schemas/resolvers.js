@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Category, Quiz } = require('../models');
+const { User, Question } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -37,15 +37,13 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    categories: async () => {
-      return Category.find();
+    allQuestions: async () => {
+      return Question.find();
     },
-    category: async (_, args) => {
-      return Category.findOne({ categoryId: args.categoryId });
-    },
-    quizzes: async () => {
-      return Quiz.find();
+    searchQuestions: async (_, args) => {
+      return Question.find({ category: args.category })
     }
+
   },
 
   Mutation: {
