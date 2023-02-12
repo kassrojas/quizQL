@@ -18,7 +18,6 @@ const typeDefs = gql`
     _id: ID
     user: User
     score: Int
-    question: Question
   }
 
   type Question {
@@ -37,7 +36,9 @@ const typeDefs = gql`
     searchUsers(term: String!): [User]!
     me: User
     allQuestions: [Question]!
-    searchQuestions(category: String!): [Question]!  
+    searchQuestions(category: String!): [Question]!
+    searchCategories: [Question]! 
+    userResults(user: String!): [Results]  
   }
 
   type Mutation {
