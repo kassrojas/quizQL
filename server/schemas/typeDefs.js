@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    results: [Results]
   }
 
   type Auth {
@@ -15,25 +16,14 @@ const typeDefs = gql`
 
   type Results {
     _id: ID
-    userId: User
+    user: User
     score: Int
+    question: Question
   }
 
-  type Leaderboard {
+  type Question {
     _id: ID
-    category: Category
-    results: Results
-  }
-
-  type Category {
-    _id: ID
-    categoryId: Int
-    name: String
-  }
-
-  type Quiz {
-    _id: ID
-    category: Category
+    category: String
     type: String
     question: String
     correct_answer: String
@@ -46,9 +36,8 @@ const typeDefs = gql`
     user(id: ID!): User
     searchUsers(term: String!): [User]!
     me: User
-    categories: [Category]!
-    category(categoryId: Int!): Category
-    quizzes: [Quiz]!
+    allQuestions: [Question]!
+    searchQuestions(category: String!): [Question]!  
   }
 
   type Mutation {
