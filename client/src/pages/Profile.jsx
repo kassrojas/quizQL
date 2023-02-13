@@ -10,12 +10,13 @@ import UserList from '../components/UserList';
 
 const Profile = () => {
   const { id } = useParams();
-
+  console.log(id);
+  
   // Get current user
   const { loading, data, error } = useQuery(id ? QUERY_USER : QUERY_ME, {
     variables: { id },
   });
-
+  
   // Get a list of all users
   const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
 
