@@ -39,3 +39,11 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_CATEGORIES = gql`
+  query searchCategories {
+    searchCategories {
+      category
+    }
+  }
+`
