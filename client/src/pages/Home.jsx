@@ -44,6 +44,7 @@ const Home = () => {
   const categoryList = [...new Set(categoryListUntrimmed)];
   console.log(categoryList);
 
+
   const renderButtons = () => {
     return categoryList.map(category =>
       <button
