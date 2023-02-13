@@ -55,3 +55,13 @@ export const QUERY_USERRESULTS = gql`
     }
   }
 `;
+
+export const QUERY_QUESTIONS = gql`
+  query searchQuestions($category: String!) {
+    searchQuestions(category: $category) {
+      question
+      correct_answer
+      incorrect_answers
+    }
+  }
+`;
