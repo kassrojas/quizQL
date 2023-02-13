@@ -51,6 +51,7 @@ const resolvers = {
         .limit(10)
         .skip(Math.floor(Math.random() * 6));
     },
+
   },
 
   Mutation: {
