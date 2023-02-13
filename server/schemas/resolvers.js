@@ -47,7 +47,7 @@ const resolvers = {
         return Results.find({ user: args.user });
     },
     searchQuestions: async (_, args) => {
-      return Question.find({ category: args.category }).limit(10).skip(Math.floor(Math.random() * 6));
+      return Question.find({ category: args.category }).limit(10).skip(Math.floor(Math.random() * 2));
     }
 
   },
