@@ -17,6 +17,8 @@
     "concurrently": "^7.1.0"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
     "bootstrap": "^5.2.3",
     "vanta": "^0.5.24"
   }
