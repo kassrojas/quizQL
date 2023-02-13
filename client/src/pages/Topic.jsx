@@ -1,5 +1,6 @@
 // Node Modules
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery, useLazyQuery } from '@apollo/client';
 // Utils
 import { QUERY_CATEGORIES } from '../utils/queries';
@@ -13,12 +14,13 @@ const Topic = () => {
 
   const renderButtons = () => {
     return categoryList.map(category =>
-      <button
+      <Link
+        to={`/quiz/:${category}`}
         className='btn btn-primary m-1'
         key={category}
       >
         {category}
-      </button>
+      </Link>
     )
   }
 
