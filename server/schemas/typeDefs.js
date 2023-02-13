@@ -28,6 +28,7 @@ const typeDefs = gql`
     correct_answer: String
     incorrect_answers: [String]
     difficulty: String
+    snippet: String
   }
 
   type Query {
