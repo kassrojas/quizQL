@@ -18,6 +18,9 @@ const questionSchema = new Schema({
   incorrect_answers: [String],
   difficulty: {
     type: String
+  },
+  snippet: {
+    type: String
   }
 })
 
