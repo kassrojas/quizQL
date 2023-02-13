@@ -62,6 +62,7 @@ export const QUERY_QUESTIONS = gql`
       question
       correct_answer
       incorrect_answers
+      snippet
     }
   }
 `;
