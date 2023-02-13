@@ -1,8 +1,8 @@
 // Node Modules
 import React, { useRef, useState } from 'react';
-import { useQuery, useLazyQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 // Utilities
-import { QUERY_CATEGORIES } from '../utils/queries';
+import { QUERY_CATEGORIES, QUERY_ME } from '../utils/queries';
 // import Auth from '../utils/auth';
 // import { QUERY_USERS, SEARCH_USERS } from '../utils/queries';
 // Components
@@ -37,13 +37,14 @@ const Home = () => {
   //   });
   // }
 
-  const { loading, data } = useQuery(QUERY_CATEGORIES);
-  const categories = data?.searchCategories || [];
-
+  const { userLoading, data: userData } = useQuery(QUERY_ME);
+  const user = userData?.me || {};
+  const { categoryLoading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const categories = categoryData?.searchCategories || [];
+  
   const categoryListUntrimmed = categories.map(c => c.category);
   const categoryList = [...new Set(categoryListUntrimmed)];
-  console.log(categoryList);
-
+ 
 
   const renderButtons = () => {
     return categoryList.map(category =>
