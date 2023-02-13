@@ -20,6 +20,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Results from "./pages/Results";
 import Leaderboard from "./pages/Leaderboard";
+import Quiz from "./pages/Quiz";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -63,6 +64,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="/results" element={<Results />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/quiz/:topic" element={<Quiz />} />
           </Routes>
           <Footer />
         </>
