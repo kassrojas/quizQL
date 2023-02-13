@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const landingPage = () => {
+const LandingPage = () => {
 
 
   return (
@@ -40,4 +40,4 @@ const landingPage = () => {
   )
 }
 
-export default landingPage;
+export default LandingPage;
