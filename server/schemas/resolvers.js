@@ -49,7 +49,7 @@ const resolvers = {
     searchQuestions: async (_, args) => {
       return Question.find({ category: args.category })
         .limit(10)
-        .skip(Math.floor(Math.random() * 6));
+        .skip(Math.floor(Math.random() * 3));
     },
 
   },
@@ -77,6 +77,9 @@ const resolvers = {
 
       return { token, user };
     },
+    addScore: async(_, args) => {
+      return await Results.create({ user: args.user, score: args.score })
+    }
   },
 };
 
