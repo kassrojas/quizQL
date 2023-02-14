@@ -1,6 +1,6 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Question, Results } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Question, Results } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -13,16 +13,16 @@ const resolvers = {
           {
             email: {
               $regex: searchRgx,
-              $options: 'i',
+              $options: "i",
             },
           },
           {
             username: {
               $regex: searchRgx,
-              $options: 'i',
-            }
+              $options: "i",
+            },
           },
-        ]
+        ],
       });
     },
     users: async () => {
@@ -35,20 +35,22 @@ const resolvers = {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     allQuestions: async () => {
       return Question.find();
     },
     searchCategories: async () => {
-        return Question.find().populate('category').sort({category: 'asc'});
+      return Question.find().populate("category").sort({ category: "asc" });
     },
     userResults: async (_, args) => {
-        return Results.find({ user: args.user });
+      return Results.find({ user: args.user });
     },
     searchQuestions: async (_, args) => {
-      return Question.find({ category: args.category }).limit(10).skip(Math.floor(Math.random() * 6));
-    }
+      return Question.find({ category: args.category })
+        .limit(10)
+        .skip(Math.floor(Math.random() * 6));
+    },
 
   },
 
@@ -62,20 +64,20 @@ const resolvers = {
       const user = await User.findOne(email ? { email } : { username });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError("No user found with this email address");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
 
       return { token, user };
-    }
-  }
+    },
+  },
 };
 
 module.exports = resolvers;

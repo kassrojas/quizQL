@@ -23,7 +23,7 @@ export default function Contact() {
     }
 
     const handleFormSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         if (!name || !email || !message) {
             setError('All fields are required!')
@@ -62,7 +62,7 @@ export default function Contact() {
                     </div>
                 </div>
                 {error && (
-                    <div className="row text-center">
+                    <div className="row text-center text-light">
                         <p>{error}</p>
                     </div>
                 )}

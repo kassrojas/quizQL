@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USERS = gql`
   query users {
@@ -46,4 +46,23 @@ export const QUERY_CATEGORIES = gql`
       category
     }
   }
-`
+`;
+
+export const QUERY_USERRESULTS = gql`
+  query userResults($user: String!) {
+    userResults(user: $user) {
+      score
+    }
+  }
+`;
+
+export const QUERY_QUESTIONS = gql`
+  query searchQuestions($category: String!) {
+    searchQuestions(category: $category) {
+      question
+      correct_answer
+      incorrect_answers
+      snippet
+    }
+  }
+`;
