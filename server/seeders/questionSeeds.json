@@ -276,6 +276,7 @@
     ]
   },
   {
+
     "category": "Objects",
     "question": "What is the output of below code?",
     "correct_answer": "30, 20",
@@ -373,7 +374,7 @@
     "question": "What is the output of below code?",
     "correct_answer": "TypeError",
     "snippet": "/images/222222.png",
-    "incorrect_answers": [
+ "incorrect_answers": [
       "undefined",
       "SyntaxError",
       "1"
@@ -472,4 +473,5 @@
       "SyntaxError"
     ]
   }
+
 ]
