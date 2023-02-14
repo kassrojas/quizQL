@@ -1,22 +1,23 @@
 // Node Modules
-import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import React from "react";
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 // Utilities
-import Auth from '../utils/auth';
-import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from "../../utils/auth";
+import { QUERY_USERS, QUERY_USER, QUERY_ME } from "../../utils/queries";
 // Components
-import UserList from '../components/UserList';
+import UserList from "../../components/UserList";
+import "./index.css";
 
 const Profile = () => {
   const { id } = useParams();
   console.log(id);
-  
+
   // Get current user
   const { loading, data, error } = useQuery(id ? QUERY_USER : QUERY_ME, {
     variables: { id },
   });
-  
+
   // Get a list of all users
   const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
 
@@ -36,7 +37,7 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
+      <h4 className="text-white">
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
@@ -46,7 +47,7 @@ const Profile = () => {
   const renderUserList = () => {
     if (usersLoading) return null;
     // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter(o => o._id !== user._id);
+    const notMeUsers = users.filter((o) => o._id !== user._id);
     return <UserList users={notMeUsers} title="User List" />;
   };
 
@@ -58,16 +59,16 @@ const Profile = () => {
         <li>email: {user.email}</li>
       </ul>
     );
-  }
+  };
 
   return (
     <div>
-      <div>
-        <h2>
-          Viewing {id ? `${user.username}'s` : 'your'} profile.
-        </h2>
-        {renderCurrentUserInfo()}
-        {renderUserList()}
+      <div className="customProfile">
+        <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
+        <div>
+          {renderCurrentUserInfo()}
+          {renderUserList()}
+        </div>
       </div>
     </div>
   );
