@@ -21,8 +21,8 @@ const Question = (props) => {
               </label>
             </div>
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="exampleRadios" id="answer2" value={props.answerB} />
-              <label onChange={props.selectAnswer} className="form-check-label" for="exampleRadios2">
+              <input onChange={props.selectAnswer} className="form-check-input" type="radio" name="exampleRadios" id="answer2" value={props.answerB} />
+              <label className="form-check-label" for="exampleRadios2">
                 {props.answerB}
               </label>
             </div>
