@@ -23,7 +23,6 @@ const typeDefs = gql`
   type Question {
     _id: ID
     category: String
-    type: String
     question: String
     correct_answer: String
     incorrect_answers: [String]
