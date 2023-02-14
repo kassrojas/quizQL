@@ -25,13 +25,13 @@ const Quiz = () => {
   const [answerD, setAnswerD] = useState(questions[0].incorrect_answers[2]);
   const [snippet, setSnippet] = useState(questions[0].snippet);
 
-  if (loading) {
-    return (
-      <main>
-        <h2>Loading . . . . . . </h2>
-      </main>
-    )
-  }
+  // if (loading) {
+  //   return (
+  //     <main>
+  //       <h2>Loading . . . . . . </h2>
+  //     </main>
+  //   )
+  // }
 
   return (
     <main>
