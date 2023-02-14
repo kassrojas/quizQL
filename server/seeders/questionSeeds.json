@@ -1,436 +1,477 @@
 [
+  
   {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "1, undefined and number",
+    "snippet": "/images/2.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "1, undefined and undefined",
+      "ReferenceError: X is not defined",  
+      "1, number and number"
+    
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "A, C and B",
+    "snippet": "/images/3.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "A, B and C",
+      "B, A and C",
+      "A and C"
+    
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "false",
+    "snippet": "/images/4.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "true"
+      
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Arrays",
+    "question": "What is the output of below code?",
+    "correct_answer": "[empty, 'b', 'c', 'd'], undefined, 4",
+    "snippet": "/images/7.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "[empty, 'b', 'c', 'd'], empty, 3",
+      "[null, 'b', 'c', 'd'], empty, 3",
+      "[null, 'b', 'c', 'd'], undefined, 4"
+     
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Objects",
+    "question": "What is the output of below code?",
+    "correct_answer": "0, 1, 2",
+    "snippet": "/images/9.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "0, { return 1 }, 2",
+      "0, { return 1 }, { return 2 }",
+      "0, 1, undefined"
+    
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "true, false",
+    "snippet": "/images/11.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "true, true",
+      "SyntaxError, SyntaxError,",
+      "false, false"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code in non-strict modeWhat is the output of below code?",
+    "correct_answer": "3, 2, 3",
+    "snippet": "/images/22.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "1, 2, 3",
+      "3, 2, 3",
+      "SyntaxError: Duplicate parameter name not allowed in this context",
+      "1, 2, 1"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "ReferenceError: arguments is not defined",
+    "snippet": "/images/44.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "3",
+      "undefined",
+      "null"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "False, True",
+    "snippet": "/images/55.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "True, False"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "-Infinity",
+    "snippet": "/images/66.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "undefined",
+      "Infinity",
+      "0"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "True, True",
+    "snippet": "/images/77.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "True, False",
+      "False, False",
+      "False, True"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "1010, 0",
+    "snippet": "/images/99.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "20, 0",
+      "1010, 10-10",
+      "NaN, NaN"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "True, I'm True",
+    "snippet": "/images/111.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "True, I'm False",
+      "False, I'm True",
+      "False, I'm False"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "1,23,4",
+    "snippet": "/images/222.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "[1,2,3,4]",
+      "[1,2][3,4]",
+      "SyntaxError"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": " False",
+    "snippet": "/images/444.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "True"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Arrays",
+    "question": "What is the output of below code?",
+    "correct_answer": " -1",
+    "snippet": "/images/555.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "NaN",
+      "SyntaxError",
+      "4"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Arrays",
+    "question": "What is the output of below code?",
+    "correct_answer": "SyntaxError",
+    "snippet": "/images/666.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      " 1, [2, 3, 4, 5]",
+      "1, {2, 3, 4, 5}",
+      "1, [2, 3, 4]"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "Promise {<fulfilled>: 10}",
+    "snippet": "/images/777.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "10",
+      "SyntaxError",
+      "Promise {<rejected>: 10}"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "Promise {<resolved>: undefined}",
+    "snippet": "/images/888.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "Promise {<fulfilled>: 10}",
+      "10",
+      "SyntaxError"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "SyntaxError",
+    "snippet": "/images/999.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "1, 2, 3, 4",
+      "4, 4, 4, 4",
+      "4, 3, 2, 1"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "Process completed! and 1 2 3 5",
+    "snippet": "/images/1111.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "Process completed! and 5 5 5 5",
+      "5 5 5 5 and Process completed!",
+      "1 2 3 5 and Process completed!"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "false, true",
+    "snippet": "/images/3333.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "true, true",
+      "true, false",
+      "false, false"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "SyntaxError",
+    "snippet": "/images/4444.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "one",
+      "Symbol('one')",
+      "Symbol"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "It is a string!, It is a number!",
+    "snippet": "/images/5555.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "SyntaxError",
+      "It is not a string!, It is not a number!",
+      "It is not a string!, It is a number!"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Arrays",
+    "question": "What is the output of below code?",
+    "correct_answer": "SyntaxError",
+    "snippet": "/images/8888.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "1, [2, 3], 4",
+      "1, [2, 3, 4], undefined",
+      "1, [2], 3"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+
+    "category": "Objects",
+    "question": "What is the output of below code?",
+    "correct_answer": "30, 20",
+    "snippet": "/images/11111.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "10, 20",
+      "10, undefined",
+      "30, undefined"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Objects",
+    "question": "What is the output of below code?",
+    "correct_answer": "Error",
+    "snippet": "/images/33333.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "200",
+      "undefined",
+      "0"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Objects",
+    "question": "What is the output of below code?",
+    "correct_answer": "Tom",
+    "snippet": "/images/44444.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "Error",
+      "undefined",
+      "John"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "number, number, string, object",
+    "snippet": "/images/55555.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "number, undefined, string, object",
+      "undefined, undefined, string, object",
+      "number, number, number, number"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Arrays",
+    "question": "What is the output of below code?",
+    "correct_answer": "['Orange'], ['Apple']",
+    "snippet": "/images/66666.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "['Orange'], ['Orange', 'Apple']"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "['Hello', 'John', 'Hello John'], ['Hello', 'John', 'Good morning!']",
+    "snippet": "/images/77777.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "SyntaxError"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "ReferenceError",
+    "snippet": "/images/88888.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "Inner"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "[3, 4, 5], []",
+    "snippet": "/images/99999.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "[3, 4, 5], undefined",
+      "SyntaxError",
+      "[3, 4, 5], [undefined]"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Objects",
+    "question": "What is the output of below code?",
+    "correct_answer": "TypeError",
+    "snippet": "/images/111111.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "['key', 'value']",
+      "[]",
+      "['key']"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
-    "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "TypeError",
+    "snippet": "/images/222222.png",
+ "incorrect_answers": [
+      "undefined",
+      "SyntaxError",
+      "1"
     ]
-  },  {
-    "category": "Entertainment: Video Games",
-    "type": "multiple",
-    "difficulty": "medium",
-    "question": "Who&#039;s the creator of Geometry Dash?",
-    "correct_answer": "Robert Topala",
-    "snippet": "/images/truy.png",
+  },
+  {
+    "category": "Functions",
+    "question": "What is the output of below code?",
+    "correct_answer": "1",
+    "snippet": "/images/444444.png",
     "incorrect_answers": [
-      "Scott Cawthon",
-      "Adam Engels",
-      "Andrew Spinks"
+      "1 and 1",
+      "1,2,3 and 4,5,6",
+      "1,2,3 and 1,2,3"
+    ]
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "SyntaxError",
+    "snippet": "/images/555555.png",
+    "incorrect_answers": [
+      "38"
+    ]
+  },
+  {
+    "category": "Coding Exercise",
+    "question": "What is the output of below code?",
+    "correct_answer": "ReferenceError",
+    "snippet": "/images/666666.png",
+    "incorrect_answers": [
+      "100"
+    ]
+  },
+  {
+    "category": "Coding Exercise",
+    "question": "What is the output of below code?",
+    "correct_answer": "Window, Window",
+    "snippet": "/images/777777.png",
+    "incorrect_answers": [
+      "undefined, undefined",
+      "Person, Person",
+      "SyntaxError"
+    ]
+  },
+  {
+    "category": "Coding Exercise",
+    "question": "What is the output of below code?",
+    "correct_answer": "BMW car started, BMW vehicle started",
+    "snippet": "/images/888888.png",
+    "incorrect_answers": [
+      "BMW vehicle started, BMW car started",
+      "BMW car started, BMW car started",
+      "SyntaxError"
+    ]
+  },
+  {
+    "category": "Coding Exercise",
+    "question": "What is the output of below code?",
+    "correct_answer": "25",
+    "snippet": "/images/999999.png",
+    "incorrect_answers": [
+      "30",
+      "Uncaught TypeError",
+      "SyntaxError"
+    ]
+  },
+  {
+    "category": "Operators",
+    "question": "What is the output of below code?",
+    "correct_answer": "true",
+    "snippet": "/images/1111111.png",
+    "incorrect_answers": [
+      "false"
+    ]
+  },
+  {
+    "category": "Coding Exercise",
+    "question": "What is the output of below code?",
+    "correct_answer": "string",
+    "snippet": "/images/2222222.png",
+    "incorrect_answers": [
+      "boolean",
+      "NaN",
+      "number"
+    ]
+  },
+  {
+    "category": "Coding Exercise",
+    "question": "What is the output of below code?",
+    "correct_answer": "If",
+    "snippet": "/images/3333333.png",
+    "incorrect_answers": [
+      "Else",
+      "NaN",
+      "SyntaxError"
     ]
   }
-   
+
 ]
