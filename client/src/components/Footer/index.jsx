@@ -13,7 +13,7 @@ const Footer = () => {
           <Link className="text-light" to="/contact">Contact Us</Link>
         </div>
         <div className="col-1 d-flex flex-end m-2 bg-image">
-          <a href="https://github.com/kassrojas/quizQL" className="" target="_blank" rel="noreferrer"><img src='../../assets/githubLogo.png' alt="Github Logo" height={50} /></a>
+          <a href="https://github.com/kassrojas/quizQL" className="" target="_blank" rel="noreferrer"><img src={githubLogo} alt="Github Logo" height={50} /></a>
         </div>
       </div>
     </footer>
