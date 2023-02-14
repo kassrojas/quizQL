@@ -27,7 +27,7 @@ const Quiz = () => {
       </main>
     )
   }
-
+  
   return (
     <>
    <Question questions={questions} />
