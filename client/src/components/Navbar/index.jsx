@@ -12,16 +12,48 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <>
-        <Link to="/me">{Auth.getProfile().data.username}'s profile</Link>
-        <button onClick={logout}>Logout</button>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="/me">
+                <h4>{Auth.getProfile().data.username}'s Profile</h4>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/topics">
+                <h4>Quiz Topics</h4>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/leaderboard">
+                <h4>Leaderboard</h4>
+              </a>
+            </li>
+            <li className="nav-item">
+              <button onClick={logout} className="btn btn-danger">
+                Logout
+              </button>
+            </li>
+          </ul>
+        </nav>
       </>
     );
   }
   // If logged out show login controls
   return (
     <>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
+      <nav className="navbar justify-content-center">
+        <li className="nav-item">
+          <a className="nav-link" href="/signup">
+            <h4 className="text-white m-2">Sign Up</h4>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/login">
+            <h4 className="text-white m-2">Login</h4>
+          </a>
+        </li>
+      </nav>
     </>
   );
 }

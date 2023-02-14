@@ -3,21 +3,20 @@ import { useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 // Utilities
-import { QUERY_QUESTIONS } from '../utils/queries';
-import Question from "./Question";
+import { QUERY_CATEGORIES, QUERY_QUESTIONS } from "../utils/queries";
 
+function Quiz() {
 
-// const handleAnswer = () => {
-
-// }
-
-const Quiz = () => {
   const { topic } = useParams();
   const category = topic.slice(1);
 
-  const { loading, data } = useQuery(QUERY_QUESTIONS, {
-    variables: { category },
+  /*const { loading, data } = useQuery(QUERY_QUESTIONS, {
+    variables: { category: x },
+  });*/
+  const { data } = useQuery(QUERY_QUESTIONS, {
+    variables: { category: topic },
   });
+  console.log("data " + data?.searchQuestions);
   const questions = data?.searchQuestions || {};
 
   if (loading) {
