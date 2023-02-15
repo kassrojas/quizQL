@@ -27,7 +27,10 @@ export const ADD_USER = gql`
 export const ADD_SCORE = gql`
   mutation addScore($user: ID!, $score: Int!) {
     addScore(user: $user, score: $score) {
-      
+      user {
+        username
+      }
+      score
     }
   }
 `

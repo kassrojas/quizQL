@@ -20,7 +20,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  results: [Results.schema],
+  results: [{
+    type: Schema.Types.ObjectId,
+    ref: 'results'
+  }],
   friends: [{
     type: Schema.Types.ObjectId,
     ref: 'user'

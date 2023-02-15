@@ -1,9 +1,11 @@
 // Node Modules
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 // Utilities
-import { QUERY_CATEGORIES, QUERY_QUESTIONS } from "../utils/queries";
+import { QUERY_ME, QUERY_QUESTIONS } from '../utils/queries';
+import { ADD_SCORE } from "../utils/mutations";
+// Components
 import Question from './Question';
 import Results from "./Results";
 
@@ -11,10 +13,16 @@ const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [correct, setCorrect] = useState(null);
   const [score, setScore] = useState(0);
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
+
+  const [addScore, { error: scoreError }] = useMutation(ADD_SCORE);
 
   const { topic } = useParams();
   const category = topic.slice(1);
+
+  const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
+  const user = meData?.me || {};
+  const userId = user._id;
 
   const { loading, data } = useQuery(QUERY_QUESTIONS, {
     variables: { category },
@@ -26,17 +34,33 @@ const Quiz = () => {
     setCurrentIndex(currentIndex => currentIndex = 0);
   }
 
+  console.log('index', currentIndex);
+  console.log('length', questions.length);
   
   const handleSubmit = () => {
     if (correct === null) {
       setError('Please choose an answer to continue.');
       return;
     }
+    
     if (currentIndex < questions.length - 1) {
       if (correct) setScore(score => 1 + score);
+
       setCorrect(false);
       setError('')
       setCurrentIndex(currentIndex => 1 + currentIndex);
+
+    } else if (currentIndex === questions.length - 1) {
+      console.log('ADD SCORE?')
+      try {
+        const { data } = addScore({
+          variables: { user: userId, score: score }
+        }) 
+      } catch (err) {
+        console.error(err);
+      }
+      setCurrentIndex(currentIndex => 1 + currentIndex);
+    
     }
   }
   
@@ -48,7 +72,7 @@ const Quiz = () => {
     )
   }
   
-  if (questions.length > 0 && currentIndex >= questions.length - 1) {
+  if (currentIndex > questions.length - 1) {
     return <Results score={score} total={questions.length} reset={resetQuiz} />
   }
   
