@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const Results = require('./Results');
+const Result = require('./Result');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
@@ -20,9 +20,9 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  results: [{
+  result: [{
     type: Schema.Types.ObjectId,
-    ref: 'results'
+    ref: 'result'
   }],
   friends: [{
     type: Schema.Types.ObjectId,

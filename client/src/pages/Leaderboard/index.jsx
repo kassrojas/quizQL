@@ -6,8 +6,8 @@ import { QUERY_ALLRESULTS } from "../../utils/queries";
 const Leaderboard = () => {
 
     const { resultsLoading, data: resultsData } = useQuery(QUERY_ALLRESULTS);
-    const results = resultsData?.allResults || [];
-    console.log(results);
+    const result = resultsData?.allResults || [];
+    console.log(result);
 
   return (
     
@@ -20,7 +20,7 @@ const Leaderboard = () => {
       <div className="col-12 scores">
       <ul className="list-group">
         {/* map through result scores in descending order */}
-        {results.map((result) =>
+        {result.map((result) =>
           <li key={result._id} className="list-group-item">
             {result.user != null ? ` ${result.user.username}:` : ' Anon:'}
             {result.score}

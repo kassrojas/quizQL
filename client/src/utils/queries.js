@@ -64,9 +64,19 @@ export const QUERY_USERRESULTS = gql`
   query userResults($user: String!) {
     userResults(user: $user) {
       score
+      category
     }
   }
 `;
+
+export const QUERY_USERRESULTS_BYCATEGORY = gql`
+  query userResultsByCategory($user: String!, $category: String!) {
+    userResultsByCategory(user: $user, category: $category) {
+      score
+      category
+    }
+  }
+`
 
 export const QUERY_ALLRESULTS = gql`
   query allResults {
