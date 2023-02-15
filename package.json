@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "chart.js": "^4.2.1",
+    "react-chartjs-2": "^5.2.0",
     "vanta": "^0.5.24"
   }
 }
