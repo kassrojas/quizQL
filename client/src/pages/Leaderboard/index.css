@@ -1,0 +1,29 @@
+.text-white-leaderboard {
+    text-align: center;
+    background-color: rgb(0, 255, 162);
+
+}
+.container {
+
+    max-width: 60%;
+    background-color: blue;
+    margin-top: 5%;
+    text-align: center;
+   
+}
+.list-group-item {
+   
+    background-color: rgb(255, 0, 89);
+    margin: 5px;
+    text-align: center;
+width: 40%;
+
+}
+.list-group {
+    align-items: center;
+   
+
+}
+/* .scores {
+    align-items: center;
+} */
