@@ -62,7 +62,6 @@ function App() {
             <Route path="/topics" element={<Topic />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="/results" element={<Results />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/quiz/:topic" element={<Quiz />} />
           </Routes>
