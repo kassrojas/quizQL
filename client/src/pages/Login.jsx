@@ -48,42 +48,44 @@ const Login = () => {
       );
     }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-row">
-          <div className="col">
-            <input
-              placeholder="Your email"
-              name="email"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-              className="form-control"
-            />
+      <div>
+        <form onSubmit={handleFormSubmit} className="m-4 p-2">
+          <h2 className="text-white text-center">Login</h2>
+          <div className="form-row">
+            <div className="col p-2">
+              <input
+                placeholder="Your email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col p-2">
+              <input
+                placeholder="******"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col p-2">
+              <button type="submit" className="btn btn-success">
+                Login
+              </button>
+            </div>
           </div>
-          <div className="col">
-            <input
-              placeholder="******"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-              className="form-control"
-            />
-          </div>
-          <div className="col">
-            <button type="submit" className="btn btn-success">
-              Login
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     );
   };
 
   return (
     <main>
-      <h4 className="text-white">Login</h4>
-      <div className="text-white p-3">
+      <div className="text-white">
         {renderForm()}
         {error && <div>{error.message}</div>}
       </div>
