@@ -22,7 +22,7 @@ const Leaderboard = () => {
         {/* map through result scores in descending order */}
         {result.map((result) =>
           <li key={result._id} className="list-group-item">
-            {result.user != null ? ` ${result.user.username}:` : ' Anon:'}
+            {result.user != null ? ` ${result.user.username}:` : ' Anon'}
             {result.score}
           </li>
         )}
