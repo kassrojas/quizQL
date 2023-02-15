@@ -15,23 +15,23 @@ const Topic = () => {
 
   const renderButtons = () => {
     return categoryList.map((category) => (
-      <button className="btn topicsBtn">
-        <a href={`/quiz/:${category}`} key={category}>
-          {category}
-        </a>
-      </button>
+      <a href={`/quiz/:${category}`} key={category}>
+        <button className="btn topicsBtn">{category}</button>
+      </a>
     ));
   };
 
   return (
     <main>
       <div className="container">
-        <div className="card">
-          <div className="card-body">
-            <h4 className="text-center">Select a category:</h4>
+        <div className="card topicCard">
+          <div className="card-body topicCard">
+            <h4 className="text-center text-white">
+              Select a Topic To Begin Quiz:
+            </h4>
             <div className="row">
-              <div className="flex-grow btn-group-vertical">
-                {renderButtons()}
+              <div className="col">
+                <div className="btn-group-vertical">{renderButtons()}</div>
               </div>
             </div>
           </div>

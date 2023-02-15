@@ -5,9 +5,16 @@
 .btn-custom {
     background-color: #09772c;
     color: white;
+    font-size: large;
+    width: 70%;
+    margin: 8px;
 }
 
 .btn-custom:hover {
     background-color: #00ff51;
     color: black;
+}
+
+a:link {
+    text-decoration: none;
 }

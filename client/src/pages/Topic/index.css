@@ -3,9 +3,17 @@ a:link {
 }
 
 .topicsBtn:hover { 
-  background-color: green; 
+  background-color: #00ff51;
+  color: black;
 }
 
-a:hover {
+.topicsBtn {
+  background-color: #09772c;
   color: white;
+  margin: 6px;
+  font-size: 20px;
+}
+
+.topicCard {
+  background-color: rgba(0, 0, 0, 0.305);
 }
