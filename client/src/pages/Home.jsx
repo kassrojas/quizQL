@@ -2,18 +2,31 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { Navigate, useParams } from "react-router-dom";
+import { Bar } from 'react-chartjs-2';
+import { 
+  Chart as ChartJS, 
+  CategoryScale, 
+  LinearScale, 
+  BarElement,
+  Title,
+  Tooltip,
+  Legend } from 'chart.js';
+import { faker } from '@faker-js/faker';
 // Utilities
-import { QUERY_USERS, 
-         SEARCH_USERS,
-         QUERY_CATEGORIES, 
-         QUERY_ME, 
-         QUERY_USERRESULTS, 
-         QUERY_USERRESULTS_BYCATEGORY 
-        } from '../utils/queries';
+import {
+  QUERY_USERS,
+  SEARCH_USERS,
+  QUERY_CATEGORIES,
+  QUERY_ME,
+  QUERY_USERRESULTS,
+  QUERY_USERRESULTS_BYCATEGORY
+} from '../utils/queries';
 import Auth from "../utils/auth";
 // Components
 import Score from '../components/Score'
 import UserList from "../components/UserList";
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 // import Auth from '../utils/auth';
 // import { QUERY_USERS, SEARCH_USERS } from '../utils/queries';
@@ -73,7 +86,7 @@ const Home = () => {
   // Query Categories
   const { categoryLoading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const categories = categoryData?.searchCategories || [];
-  
+
   const categoryListUntrimmed = categories.map(c => c.category);
   const categoryList = [...new Set(categoryListUntrimmed)];
 
@@ -88,7 +101,7 @@ const Home = () => {
     variables: { user: userId, category: category }
   })
   const resultsByCategory = singleResultData?.userResultsByCategory || [];
-  
+
 
 
   // redirect to personal profile page if username is yours
@@ -113,26 +126,26 @@ const Home = () => {
   const getCategory = (e) => {
     setCategory(category => category = e.target.value);
   }
-  
+
   const renderButtons = () => {
     return (
       <>
-        {categoryList.map(category =>    
-        <button
-          onClick={getCategory}
-          className='btn btn-primary'
-          key={category}
-          value={category}
-        >
-          {category}
-        </button>
+        {categoryList.map(category =>
+          <button
+            onClick={getCategory}
+            className='btn btn-primary'
+            key={category}
+            value={category}
+          >
+            {category}
+          </button>
         )}
         <button
           onClick={getCategory}
           className='btn btn-primary'
           key='All Topics'
           value={'All Topics'}
-          >
+        >
           All Topics
         </button>
       </>
@@ -160,17 +173,54 @@ const Home = () => {
   console.log('allResults:', allResults);
   console.log('resultsByCat:', resultsByCategory);
 
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'User Score Chart',
+      },
+    },
+  };
+
+  const labels = categoryList;
+  console.log(allResults);
+  
+  // const entryData = [
+  //   { category: 'Arrays', score: 10 },
+  //   { category: 'Objects', score: 20 },
+  //   { category: 'Functions', score: 30 }
+  // ]
+
+  // console.log(entryData);
+
+  const chartData = {
+    labels: categoryList,
+    datasets: [
+      {
+        label: 'All Scores',
+        data: allResults.map(row => row.score),
+        borderColor: 'rgb(255,0, 0)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      }
+    ],
+  };
+
   return (
     <main>
       {/* Top in mobile view // Left in desktop view */}
       <div className='container'>
         <div className='row'>
-          <div className='col-12 col-md-6'>
-            <div className="card">
-               <h4>ChartJS here</h4>
+          <div className='col-12 col-md-6 min-vh-50'>
+            <div className="card flex-grow">
+              <Bar className='flex-grow' options={options} data={chartData} />
             </div>
           </div>
-     
+
           {/* Bottom in mobile view // Right in desktop view */}
           <div className='col-12 col-md-6'>
             <div className="card">
@@ -178,11 +228,11 @@ const Home = () => {
                 <div className='col-12'>
                   {renderButtons()}
                   <p>Your Scores for {category}:</p>
-                <Score 
-                  category={category} 
-                  allResults={allResults} 
-                  resultsByCategory={resultsByCategory}
-                />
+                  <Score
+                    category={category}
+                    allResults={allResults}
+                    resultsByCategory={resultsByCategory}
+                  />
                 </div>
               </div>
             </div>
@@ -190,14 +240,14 @@ const Home = () => {
         </div>
       </div>
       <div>
-      <div className="customProfile">
-        <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
-        <div>
-          {renderCurrentUserInfo()}
-          {renderUserList()}
+        <div className="customProfile">
+          <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
+          <div>
+            {renderCurrentUserInfo()}
+            {renderUserList()}
+          </div>
         </div>
       </div>
-    </div>
     </main>
   );
 };
