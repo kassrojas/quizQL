@@ -38,13 +38,14 @@ const typeDefs = gql`
     allQuestions: [Question]!
     searchQuestions(category: String!): [Question]!
     searchCategories: [Question]! 
+    allResults: [Results]!
     userResults(user: String!): [Results]  
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addScore(score: Int!, user: ID!): Results
+    addScore(user: ID!, score: Int!): Results
   }
 `;
 

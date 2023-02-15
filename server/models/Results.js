@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const resultsSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
   },
   score: {
     type: Number,
