@@ -4,16 +4,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 
+
 const Result = (props) => {
   const { loading, data } = useQuery(QUERY_ME);
   const user = data?.me || {};
   const userId = user._id;
 
+
   const { resultsLoading, data: resultsData } = useQuery(QUERY_USERRESULTS, {
     variables: { userId },
   });
+
   const result = resultsData?.userResults || [];
   console.log(result);
+
 
   return (
     <>
@@ -34,4 +38,6 @@ const Result = (props) => {
   );
 };
 
+
 export default Result;
+
