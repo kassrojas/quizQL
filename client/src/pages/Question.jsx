@@ -8,6 +8,7 @@ const Question = (props) => {
         <div className="card-body">
           <h4>{props.question}</h4>
         </div>
+        {/* TODO: condition to show snippet only if exists */}
         <div height="900">
           <img src={props.snippet} className="flex-grow" />
         </div>

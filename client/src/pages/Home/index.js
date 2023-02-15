@@ -44,7 +44,7 @@ const Home = () => {
         <button type="submit">Search</button>
       </form>
       <div>
-        <UserList users={searchResults} title="Search Results" />
+        <UserList users={searchResults} title="Search Result" />
       </div>
       <div>{renderUsername()}</div>
       <div>{renderUserList()}</div>

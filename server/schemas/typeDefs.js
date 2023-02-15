@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    results: [Results]
+    result: [Result]
   }
 
   type Auth {
@@ -14,10 +14,11 @@ const typeDefs = gql`
     user: User
   }
 
-  type Results {
+  type Result {
     _id: ID
     user: User
     score: Int
+    category: String
   }
 
   type Question {
@@ -38,14 +39,15 @@ const typeDefs = gql`
     allQuestions: [Question]!
     searchQuestions(category: String!): [Question]!
     searchCategories: [Question]! 
-    allResults: [Results]!
-    userResults(user: String!): [Results]  
+    allResults: [Result]!
+    userResults(user: String!): [Result]  
+    userResultsByCategory(user: String!, category: String!): [Result]
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addScore(user: ID!, score: Int!): Results
+    addScore(user: ID!, score: Int!, category: String!): Result
   }
 `;
 
