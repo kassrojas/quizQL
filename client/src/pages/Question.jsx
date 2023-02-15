@@ -1,7 +1,33 @@
 // Node Modules
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Question = (props) => {
+
+
+  useEffect(() => {
+    const shuffle = (answers) => {
+      let currentIndex = answers.length, randomIndex;
+      while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [answers[currentIndex], answers[randomIndex]] = [
+          answers[randomIndex], answers[currentIndex]
+        ]
+      }
+      return answers;
+    }
+    const shuffledAnswers = shuffle(props.answers);
+
+  }, [])
+
+  const handleChange = (event, index) => {
+    console.log('INDEX PLEASE', index);
+    props.selectAnswer(event);
+    props.setCheckedIndex(index);
+  }
+
+
   return (
     <main>
       <div className="card">
@@ -15,30 +41,25 @@ const Question = (props) => {
 
         <div>
           <ul>
-            <div className="form-check">
-              <input onChange={props.selectAnswer} className="form-check-input" type="radio" name="exampleRadios" id="answer1" value={props.answerA} />
-              <label className="form-check-label" for="exampleRadios1">
-                {props.answerA}
-              </label>
-            </div>
-            <div className="form-check">
-              <input onChange={props.selectAnswer} className="form-check-input" type="radio" name="exampleRadios" id="answer2" value={props.answerB} />
-              <label className="form-check-label" for="exampleRadios2">
-                {props.answerB}
-              </label>
-            </div>
-            <div className="form-check">
-              <input onChange={props.selectAnswer} className="form-check-input" type="radio" name="exampleRadios" id="answer3" value={props.answerC} />
-              <label className="form-check-label" for="exampleRadios2">
-                {props.answerC}
-              </label>
-            </div>
-            <div className="form-check">
-              <input onChange={props.selectAnswer} className="form-check-input" type="radio" name="exampleRadios" id="answer4" value={props.answerD} />
-              <label className="form-check-label" for="exampleRadios2">
-                {props.answerD}
-              </label>
-            </div>
+            {props.answers.map((answer, index) =>
+              <div className="form-check">
+                <input 
+                  onChange={(event) => handleChange(event, index)} 
+                  className="form-check-input" 
+                  type="radio" 
+                  name="exampleRadios" 
+                  id="answer1" 
+                  value={answer}
+                  checked={index === props.checkedIndex}
+                />
+                <label 
+                  className="form-check-label" 
+                  for="exampleRadios1"
+                >
+                  {answer}
+                </label>
+              </div>
+            )}
           </ul>
         </div>
       </div>
