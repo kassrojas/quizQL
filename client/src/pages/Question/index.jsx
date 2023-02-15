@@ -1,10 +1,12 @@
-// Node Modules
+import './index.css';
+// Node Moddives
 import React, { useState } from "react";
 
 const Question = (props) => {
   return (
     <main>
-      <div className="card">
+      <div className="card-Parent">
+      <div className="card card-container">
         <div className="card-body">
           <h4>{props.question}</h4>
         </div>
@@ -13,7 +15,8 @@ const Question = (props) => {
         </div>
 
         <div>
-          <ul>
+          <div>
+            <div className='answers'>
             <div className="form-check">
               <input onChange={props.selectAnswer} className="form-check-input" type="radio" name="exampleRadios" id="answer1" value={props.answerA} />
               <label className="form-check-label" for="exampleRadios1">
@@ -38,8 +41,10 @@ const Question = (props) => {
                 {props.answerD}
               </label>
             </div>
-          </ul>
+          </div>
+          </div>
         </div>
+      </div>
       </div>
     </main>
 
