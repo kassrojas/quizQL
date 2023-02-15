@@ -17,7 +17,7 @@ const Leaderboard = () => {
         <div className="col-12 scores">
           <ul className="list-group">
             {/* map through result scores in descending order */}
-            {results.map((result) => (
+            {result.map((result) => (
               <li key={result._id} className="list-group-item">
                 {result.user != null ? ` ${result.user.username}:` : " Anon:"}
                 {result.score}
@@ -25,17 +25,6 @@ const Leaderboard = () => {
             ))}
           </ul>
         </div>
-      </div>
-      <div className="col-12 scores">
-        <ul className="list-group">
-          {/* map through result scores in descending order */}
-          {result.map((result) => (
-            <li key={result._id} className="list-group-item">
-              {result.user != null ? ` ${result.user.username}:` : " Anon:"}
-              {result.score}
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );
