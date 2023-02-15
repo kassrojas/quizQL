@@ -18,7 +18,7 @@ import LandingPage from "./pages/LandingPage";
 import Topic from "./pages/Topic";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Results from "./pages/Results";
+import Result from "./pages/Result";
 import Leaderboard from "./pages/Leaderboard";
 import Quiz from "./pages/Quiz";
 
@@ -54,14 +54,14 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/me" element={<Profile />} />
-            <Route path="/users/:id" element={<Profile />} />
+            <Route path="/me" element={<Home />} />
+            <Route path="/users/:id" element={<Home />} />
             <Route path="/topics" element={<Topic />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="/result" element={<Result />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/quiz/:topic" element={<Quiz />} />
           </Routes>
