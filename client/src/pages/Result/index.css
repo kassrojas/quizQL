@@ -1,0 +1,13 @@
+.resultsPage {
+    color: white;
+}
+
+.btn-custom {
+    background-color: #09772c;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #00ff51;
+    color: black;
+}
