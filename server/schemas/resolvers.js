@@ -43,6 +43,9 @@ const resolvers = {
     searchCategories: async () => {
       return Question.find().populate("category").sort({ category: "asc" });
     },
+    allResults: async () => {
+      return Results.find().populate("user").sort({ score: "desc" });
+    },
     userResults: async (_, args) => {
       return Results.find({ user: args.user });
     },
