@@ -22,9 +22,7 @@ const Result = (props) => {
   return (
     <>
       <div className="resultsPage">
-
         <h1>Result for {user.username}</h1>
-
         <h3> Score: {props.score}/{props.total || 10}</h3>
         <button onClick={props.resetQuiz} className="btn btn-custom">
           Retake Quiz

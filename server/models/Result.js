@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
-
 const bcrypt = require("bcrypt");
+
 
 const resultSchema = new Schema({
   user: {
@@ -20,4 +20,3 @@ const resultSchema = new Schema({
 const Result = model("result", resultSchema);
 
 module.exports = Result;
-
