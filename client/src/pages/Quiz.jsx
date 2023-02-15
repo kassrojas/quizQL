@@ -7,13 +7,14 @@ import { QUERY_ME, QUERY_QUESTIONS } from '../utils/queries';
 import { ADD_SCORE } from "../utils/mutations";
 // Components
 import Question from './Question';
-import Results from "./Results";
+import Result from "./Result";
 
 const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [correct, setCorrect] = useState(null);
   const [score, setScore] = useState(0);
   const [error, setError] = useState('');
+  const [checkedIndex, setCheckedIndex] = useState(-1);
 
   const [addScore, { error: scoreError }] = useMutation(ADD_SCORE);
 
@@ -21,6 +22,7 @@ const Quiz = () => {
   const category = topic.slice(1);
 
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
+  
   const user = meData?.me || {};
   const userId = user._id;
 
@@ -47,14 +49,15 @@ const Quiz = () => {
       if (correct) setScore(score => 1 + score);
 
       setCorrect(false);
-      setError('')
+      setError('');
       setCurrentIndex(currentIndex => 1 + currentIndex);
+      setCheckedIndex(-1);
 
     } else if (currentIndex === questions.length - 1) {
-      console.log('ADD SCORE?')
+      console.log('category', category)
       try {
         const { data } = addScore({
-          variables: { user: userId, score: score }
+          variables: { user: userId, score: score, category: category }
         }) 
       } catch (err) {
         console.error(err);
@@ -73,33 +76,17 @@ const Quiz = () => {
   }
   
   if (currentIndex > questions.length - 1) {
-    return <Results score={score} total={questions.length} reset={resetQuiz} />
+    return <Result score={score} total={questions.length} reset={resetQuiz} />
   }
   
   console.log('QUESTIONS', questions);
 
-  // Shuffle order of answers
-  const answers = [
+  const selectedAnswers = [
     questions[currentIndex].incorrect_answers[0],
     questions[currentIndex].incorrect_answers[1],
     questions[currentIndex].incorrect_answers[2],
     questions[currentIndex].correct_answer
   ]
-  
-  const shuffle = (answers) => {
-    let currentIndex = answers.length, randomIndex;
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      
-      [answers[currentIndex], answers[randomIndex]] = [
-        answers[randomIndex], answers[currentIndex]
-      ]
-    }
-    return answers;
-  }
-  
-  const shuffledAnswers = shuffle(answers);
   const selected = questions[currentIndex];
   
   const selectAnswer = (e) => {
@@ -111,10 +98,7 @@ const Quiz = () => {
   if (selected && selected.question) {
     const question = selected.question;
     const snippet = selected.snippet;
-    const answerA = shuffledAnswers[0];
-    const answerB = shuffledAnswers[1];
-    const answerC = shuffledAnswers[2];
-    const answerD = shuffledAnswers[3];
+    const answers = selectedAnswers;
     return (
       <>
         <Question
@@ -122,10 +106,9 @@ const Quiz = () => {
           selectAnswer={selectAnswer}
           question={question}
           snippet={snippet}
-          answerA={answerA}
-          answerB={answerB}
-          answerC={answerC}
-          answerD={answerD}
+          answers={answers}
+          setCheckedIndex={setCheckedIndex}
+          checkedIndex={checkedIndex}
         />
         <button onClick={() => handleSubmit()} type="submit" className="btn btn-primary">Submit</button>
         {error && (

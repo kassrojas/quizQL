@@ -1,10 +1,22 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const resultsSchema = new Schema({
+
+const resultSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "user",
+  },
   score: {
     type: Number,
     required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  }
 });
 
-module.exports = resultsSchema;
+const Result = model("result", resultSchema);
+
+module.exports = Result;

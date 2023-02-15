@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Question, Results } = require("../models");
+const { User, Question, Result } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -44,10 +44,13 @@ const resolvers = {
       return Question.find().populate("category").sort({ category: "asc" });
     },
     allResults: async () => {
-      return Results.find().populate("user").sort({ score: "desc" });
+      return Result.find().populate("user").sort({ score: "desc" });
     },
     userResults: async (_, args) => {
-      return Results.find({ user: args.user });
+      return Result.find({ user: args.user });
+    },
+    userResultsByCategory: async (_, args) => {
+      return Result.find({ user: args.user, category: args.category });
     },
     searchQuestions: async (_, args) => {
       return Question.find({ category: args.category })
@@ -81,7 +84,8 @@ const resolvers = {
       return { token, user };
     },
     addScore: async(_, args) => {
-      return await Results.create({ user: args.user, score: args.score })
+      console.log('user', args.user, 'cat', args.category)
+      return await Result.create({ user: args.user, score: args.score, category: args.category })
     }
   },
 };
