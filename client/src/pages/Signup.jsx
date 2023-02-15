@@ -46,37 +46,54 @@ const Signup = () => {
       );
     }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your username"
-          name="username"
-          type="text"
-          value={formState.name}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="Your email"
-          name="email"
-          type="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="******"
-          name="password"
-          type="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <form onSubmit={handleFormSubmit} className="m-4 p-2">
+          <h2 className="text-white text-center">Sign Up</h2>
+          <div className="form-row">
+            <div className="col p-2">
+              <input
+                placeholder="Your username"
+                name="username"
+                type="text"
+                value={formState.name}
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col p-2">
+              <input
+                placeholder="Your email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col p-2">
+              <input
+                placeholder="******"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col p-2">
+              <button type="submit" className="btn btn-success">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     );
   };
 
   return (
     <main>
-      <h4 className="text-white">Sign Up</h4>
-      <div className="text-danger">
+      <div className="text-white">
         {renderForm()}
         {error && <div>{error.message}</div>}
       </div>
