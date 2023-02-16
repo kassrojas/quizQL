@@ -15,6 +15,7 @@ const Result = (props) => {
   const result = resultsData?.userResults || [];
   console.log(result);
 
+
   return (
     <>
       <main>

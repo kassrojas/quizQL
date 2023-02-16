@@ -45,7 +45,7 @@ const Question = (props) => {
               <div className="form-check">
                 <input 
                   onChange={(event) => handleChange(event, index)} 
-                  className="form-check-input" 
+                  className="d-flex justify-content-center form-check-input" 
                   type="radio" 
                   name="exampleRadios" 
                   id="answer1" 

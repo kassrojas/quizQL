@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-import { faker } from '@faker-js/faker';
+
 // Utilities
 import {
   QUERY_USERS,
@@ -103,7 +103,7 @@ const Home = () => {
         {categoryList.map(category =>
           <button
             onClick={getCategory}
-            className='btn btn-primary'
+            className='btn btn-primary m-1'
             key={category}
             value={category}
           >
@@ -112,7 +112,7 @@ const Home = () => {
         )}
         <button
           onClick={getCategory}
-          className='btn btn-primary'
+          className='btn btn-primary m-1'
           key='All Topics'
           value={'All Topics'}
         >
@@ -122,21 +122,6 @@ const Home = () => {
     )
   }
 
-
-  // const renderCurrentUserInfo = () => {
-  //   if (id) return null;
-  //   return (
-  //     <ul>
-  //       <li>username: {user.username}</li>
-  //       <li>email: {user.email}</li>
-  //     </ul>
-  //   );
-  // };
-
-  console.log('allResults:', allResults);
-  console.log('resultsByCat:', resultsByCategory);
-
-
   const options = {
     responsive: true,
     plugins: {
@@ -145,7 +130,7 @@ const Home = () => {
       },
       title: {
         display: true,
-        text: 'User Score Chart',
+        text: `${me.username}'s Score Chart`,
       },
     },
   };
@@ -162,6 +147,32 @@ const Home = () => {
     ],
   };
 
+  console.log('allresults', allResults);
+  
+  if (allResults.length) {
+    const allScores = allResults.map((result) => result.score);
+    var average = allScores.reduce((a, b) => a + b) / allScores.length;
+  } else {
+    var average = 0;
+  }
+
+  console.log('catresults', resultsByCategory);
+
+  if (resultsByCategory.length) {
+    const allCatScores = resultsByCategory.map((result) => result.score);
+    var catAverage = allCatScores.reduce((a, b) => a + b) / allCatScores.length;
+  } else {
+    var catAverage = 0;
+  }
+
+
+  function findAvg() {
+    return (
+      <p></p>
+    )
+
+  }
+
   return (
     <main>
       {/* Top in mobile view // Left in desktop view */}
@@ -173,7 +184,11 @@ const Home = () => {
           <div className='col-12 col-md-6'>
             <div className="card min-vh-50">
               <div className='chart-container container-fluid' >
-                <Bar className='flex-grow' options={options} data={chartData} />
+                <Bar className='flex-grow'
+                  options={options}
+                  data={chartData}
+                  style={{ height: '100%', width: '100%' }}
+                />
               </div>
             </div>
           </div>
@@ -184,6 +199,8 @@ const Home = () => {
               <div className='row'>
                 <div className='col-12'>
                   {renderButtons()}
+                  {findAvg()}
+                  <p>{category === 'All Topics' ? `Average total score: ${average}` : `Average for ${category}: ${catAverage}`}</p>
                   <p>Your Scores for {category}:</p>
                   <Score
                     category={category}

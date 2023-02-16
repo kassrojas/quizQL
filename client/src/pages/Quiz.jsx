@@ -19,24 +19,25 @@ const Quiz = () => {
   const [addScore, { error: scoreError }] = useMutation(ADD_SCORE);
 
   const { topic } = useParams();
-  const retakeCategory = topic
   const category = topic.slice(1);
+  const retakeCategory = topic;
 
+  // Query current user
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
   
   const user = meData?.me || {};
   const userId = user._id;
 
+  // Query questions by category
   const { loading, data } = useQuery(QUERY_QUESTIONS, {
     variables: { category },
   });
 
   const questions = data?.searchQuestions || [];
 
-  console.log('index', currentIndex);
-  console.log('length', questions.length);
-  
+  // Submit answer handling
   const handleSubmit = () => {
+
     if (correct === null) {
       setError('Please choose an answer to continue.');
       return;
@@ -73,6 +74,7 @@ const Quiz = () => {
     )
   }
   
+  // Go to results after last question
   if (currentIndex > questions.length - 1) {
     const finalScore = parseInt((score / questions.length) * 100);
     return <Result finalScore={finalScore} total={questions.length} retakeCategory={retakeCategory} />
@@ -80,6 +82,7 @@ const Quiz = () => {
   
   console.log('QUESTIONS', questions);
 
+  // Current question, current answer
   const selectedAnswers = [
     questions[currentIndex].incorrect_answers[0],
     questions[currentIndex].incorrect_answers[1],

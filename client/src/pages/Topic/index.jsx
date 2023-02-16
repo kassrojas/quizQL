@@ -16,7 +16,7 @@ const Topic = () => {
   const renderButtons = () => {
     return categoryList.map((category) => (
       <a href={`/quiz/:${category}`} key={category}>
-        <button className="btn topicsBtn">{category}</button>
+        <button className="btn topicsBtn ">{category}</button>
       </a>
     ));
   };
@@ -31,7 +31,9 @@ const Topic = () => {
             </h4>
             <div className="row">
               <div className="col">
-                <div className="btn-group-vertical">{renderButtons()}</div>
+                <div className="d-grid gap-2">
+                  {renderButtons()}
+                </div>
               </div>
             </div>
           </div>

@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1 className="text-white p-2"> Let's Get Quizzicle</h1>
+      <h1 className="text-white p-2"> Let's Get Quizzical</h1>
       <div>
         <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
         {renderPage()}

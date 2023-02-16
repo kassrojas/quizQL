@@ -21,7 +21,7 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/topics">
+              <a className="nav-link" href="/topic">
                 <h4>Quiz Topics</h4>
               </a>
             </li>
