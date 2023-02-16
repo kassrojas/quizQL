@@ -25,12 +25,12 @@ const Result = (props) => {
               <hr />
             </h1>
             <h1 className="my-4">
-              Score: {props.score}/{props.total || 10}
+              Score: {props.finalScore} %
             </h1>
             <div className="row justify-content-center">
               <a>
-                <button onClick={props.resetQuiz} className="btn btn-custom">
-                  Retake Quiz
+                <button className="btn btn-custom">
+                  <a className="text-light" href={props.retakeCategory}>Retake Quiz</a>
                 </button>
               </a>
               <a href="/topics">
