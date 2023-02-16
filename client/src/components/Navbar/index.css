@@ -1,3 +1,15 @@
-/* .navbar {
+:root {
+  --bg-color: rgba(249, 220, 196, 0.5);
+  --bg-hover: rgb(255, 243, 176, 0.9);
+  --custom-text: rgb(248, 247, 255);
+  --custom-text-hover: rgb(255, 0, 0);
+}
 
-} */
+.customCss {
+  color: var(--custom-text);
+}
+
+.customCss:hover {
+  color: var(--custom-text-hover);
+}
+

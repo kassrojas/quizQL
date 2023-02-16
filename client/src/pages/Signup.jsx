@@ -6,6 +6,8 @@ import { ADD_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
+import "./Quiz/index.css";
+
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: "",
@@ -81,7 +83,7 @@ const Signup = () => {
               />
             </div>
             <div className="col p-2">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn submitCustomCss">
                 Submit
               </button>
             </div>
