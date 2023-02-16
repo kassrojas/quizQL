@@ -24,13 +24,13 @@ const Result = (props) => {
               Result for <a href="/me">{user.username} </a>
               <hr />
             </h1>
-            <h1 className="my-4">
-              Score: {props.finalScore} %
-            </h1>
+            <h1 className="my-4">Score: {props.finalScore} %</h1>
             <div className="row justify-content-center">
               <a>
                 <button className="btn btn-custom">
-                  <a className="text-light" href={props.retakeCategory}>Retake Quiz</a>
+                  <a className="retake-css" href={props.retakeCategory}>
+                    Retake Quiz
+                  </a>
                 </button>
               </a>
               <a href="/topics">

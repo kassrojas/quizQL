@@ -1,8 +1,8 @@
 // Node Modules
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 import { Navigate, useParams } from "react-router-dom";
-import { Bar } from 'react-chartjs-2';
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,9 +10,9 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend
-} from 'chart.js';
-import { faker } from '@faker-js/faker';
+  Legend,
+} from "chart.js";
+
 // Utilities
 import {
   QUERY_USERS,
@@ -20,18 +20,24 @@ import {
   QUERY_CATEGORIES,
   QUERY_ME,
   QUERY_USERRESULTS,
-  QUERY_USERRESULTS_BYCATEGORY
-} from '../utils/queries';
+  QUERY_USERRESULTS_BYCATEGORY,
+} from "../utils/queries";
 import Auth from "../utils/auth";
 // Components
-import Score from '../components/Score'
+import Score from "../components/Score";
 import UserList from "../components/UserList";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const Home = () => {
-  const [category, setCategory] = useState('All Topics');
+  const [category, setCategory] = useState("All Topics");
   console.log(category);
 
   const { id } = useParams();
@@ -57,22 +63,26 @@ const Home = () => {
   const { categoryLoading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const categories = categoryData?.searchCategories || [];
 
-  const categoryListUntrimmed = categories.map(c => c.category);
+  const categoryListUntrimmed = categories.map((c) => c.category);
   const categoryList = [...new Set(categoryListUntrimmed)];
 
   // Query All User Results
-  const { loading: resultLoading, data: resultData } = useQuery(QUERY_USERRESULTS, {
-    variables: { user: userId }
-  });
+  const { loading: resultLoading, data: resultData } = useQuery(
+    QUERY_USERRESULTS,
+    {
+      variables: { user: userId },
+    }
+  );
   const allResults = resultData?.userResults || [];
 
   //Query User Results by Category
-  const { loading: singleResultLoading, data: singleResultData } = useQuery(QUERY_USERRESULTS_BYCATEGORY, {
-    variables: { user: userId, category: category }
-  })
+  const { loading: singleResultLoading, data: singleResultData } = useQuery(
+    QUERY_USERRESULTS_BYCATEGORY,
+    {
+      variables: { user: userId, category: category },
+    }
+  );
   const resultsByCategory = singleResultData?.userResultsByCategory || [];
-
-
 
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
@@ -92,36 +102,34 @@ const Home = () => {
     );
   }
 
-
   const getCategory = (e) => {
-    setCategory(category => category = e.target.value);
-  }
+    setCategory((category) => (category = e.target.value));
+  };
 
   const renderButtons = () => {
     return (
       <>
-        {categoryList.map(category =>
+        {categoryList.map((category) => (
           <button
             onClick={getCategory}
-            className='btn btn-primary'
+            className="btn btn-primary"
             key={category}
             value={category}
           >
             {category}
           </button>
-        )}
+        ))}
         <button
           onClick={getCategory}
-          className='btn btn-primary'
-          key='All Topics'
-          value={'All Topics'}
+          className="btn btn-primary"
+          key="All Topics"
+          value={"All Topics"}
         >
           All Topics
         </button>
       </>
-    )
-  }
-
+    );
+  };
 
   // const renderCurrentUserInfo = () => {
   //   if (id) return null;
@@ -133,19 +141,18 @@ const Home = () => {
   //   );
   // };
 
-  console.log('allResults:', allResults);
-  console.log('resultsByCat:', resultsByCategory);
-
+  console.log("allResults:", allResults);
+  console.log("resultsByCat:", resultsByCategory);
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
-        text: 'User Score Chart',
+        text: "User Score Chart",
       },
     },
   };
@@ -154,35 +161,35 @@ const Home = () => {
     labels: categoryList,
     datasets: [
       {
-        label: 'All Scores',
-        data: allResults.map(row => row.score),
-        borderColor: 'rgb(255,0, 0)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      }
+        label: "All Scores",
+        data: allResults.map((row) => row.score),
+        borderColor: "rgb(255,0, 0)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
     ],
   };
 
   return (
     <main>
       {/* Top in mobile view // Left in desktop view */}
-      <div className='container'>
-        <div className='row'>
+      <div className="container">
+        <div className="row">
           <div className="customProfile">
             <h2>Viewing {userId ? `${me.username}'s` : "Your"} Profile</h2>
           </div>
-          <div className='col-12 col-md-6'>
+          <div className="col-12 col-md-6">
             <div className="card min-vh-50">
-              <div className='chart-container container-fluid' >
-                <Bar className='flex-grow' options={options} data={chartData} />
+              <div className="chart-container container-fluid">
+                <Bar className="flex-grow" options={options} data={chartData} />
               </div>
             </div>
           </div>
 
           {/* Bottom in mobile view // Right in desktop view */}
-          <div className='col-12 col-md-6'>
+          <div className="col-12 col-md-6">
             <div className="card">
-              <div className='row'>
-                <div className='col-12'>
+              <div className="row">
+                <div className="col-12">
                   {renderButtons()}
                   <p>Your Scores for {category}:</p>
                   <Score
@@ -196,8 +203,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
     </main>
   );
 };

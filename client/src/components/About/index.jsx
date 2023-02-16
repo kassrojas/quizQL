@@ -17,7 +17,7 @@ const About = () => {
             <hr /> A group of junior developers looking to make an impact in the
             web developement space.
           </p>
-          <p className="text-white fs-5">
+          <p className="application text-white fs-5">
             <hr />
             <h4>Our Application</h4>
             <hr /> A free and easy to use coding quiz application made for

@@ -1,14 +1,8 @@
+@media screen and (max-width: 640px) {
 
-
-@media screen and (max-width: 926px) {
-    
-    .container-about { 
-        /* text-align: center; */
+    .container-about {
         overflow: scroll;
-        height: 675px;
-        margin-bottom: 14%;
-    } 
-    .application {
-        margin-bottom: 5px;
+        margin-bottom: 13%;
     }
-    }
+
+}

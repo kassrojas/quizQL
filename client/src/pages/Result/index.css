@@ -1,18 +1,35 @@
+:root {
+   --btn-bg-color: rgba(249, 220, 196, 0.5);
+   --btn-hover-bg: rgb(255, 243, 176, 0.9);
+   --btn-text: rgb(250, 237, 202);
+   --btn-hover-text: rgb(68, 19, 21);
+}
+
 .resultsPage {
     color: white;
 }
 
 .btn-custom {
-    background-color: #09772c;
-    color: white;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text);
     font-size: large;
     width: 70%;
     margin: 8px;
 }
 
 .btn-custom:hover {
-    background-color: #00ff51;
-    color: black;
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+}
+
+/* retake-css only affects text color */
+.retake-css {
+    color: var(--btn-text);
+}
+
+.retake-css:hover {
+    color: var(--btn-hover-text);
+
 }
 
 a:link {
