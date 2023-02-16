@@ -40,7 +40,7 @@ const typeDefs = gql`
     searchQuestions(category: String!): [Question]!
     searchCategories: [Question]! 
     allResults: [Result]!
-    userResults(user: String!): [Result]  
+    userResults: [Result]  
     userResultsByCategory(user: String!, category: String!): [Result]
   }
 

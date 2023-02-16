@@ -110,20 +110,10 @@ const Home = () => {
   const renderButtons = () => {
     return (
       <>
-        {categoryList.map(category =>    
-        <button
-          onClick={getCategory}
-          className='btn btn-primary'
-          key={category}
-          value={category}
-        >
-          {category}
-        </button>
-        )}
         {categoryList.map((category) => (
           <button
             onClick={getCategory}
-            className="btn btn-primary"
+            className="btn btn-primary m-1"
             key={category}
             value={category}
           >
@@ -132,39 +122,25 @@ const Home = () => {
         ))}
         <button
           onClick={getCategory}
-          className='btn btn-primary'
+          className='btn btn-primary m-1'
           key='All Topics'
           value={'All Topics'}
-          >
+        >
           All Topics
         </button>
       </>
     )
   }
 
-
-  // const renderCurrentUserInfo = () => {
-  //   if (id) return null;
-  //   return (
-  //     <ul>
-  //       <li>username: {user.username}</li>
-  //       <li>email: {user.email}</li>
-  //     </ul>
-  //   );
-  // };
-
-  console.log("allResults:", allResults);
-  console.log("resultsByCat:", resultsByCategory);
-
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        position: 'top',
       },
       title: {
         display: true,
-        text: "User Score Chart",
+        text: `${me.username}'s Score Chart`,
       },
     },
   };
@@ -173,58 +149,82 @@ const Home = () => {
     labels: categoryList,
     datasets: [
       {
-        label: "All Scores",
-        data: allResults.map((row) => row.score),
-        borderColor: "rgb(255,0, 0)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
+        label: 'All Scores',
+        data: allResults.map(row => row.score),
+        borderColor: 'rgb(255,0, 0)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      }
     ],
   };
+
+  console.log('allresults', allResults);
+  
+  if (allResults.length) {
+    const allScores = allResults.map((result) => result.score);
+    var average = allScores.reduce((a, b) => a + b) / allScores.length;
+  } else {
+    var average = 0;
+  }
+
+  console.log('catresults', resultsByCategory);
+
+  if (resultsByCategory.length) {
+    const allCatScores = resultsByCategory.map((result) => result.score);
+    var catAverage = allCatScores.reduce((a, b) => a + b) / allCatScores.length;
+  } else {
+    var catAverage = 0;
+  }
+
+
+  function findAvg() {
+    return (
+      <p></p>
+    )
+
+  }
 
   return (
     <main>
       {/* Top in mobile view // Left in desktop view */}
-      <div className="container">
-        <div className="row">
+      <div className='container'>
+        <div className='row'>
           <div className="customProfile">
             <h2>Viewing {userId ? `${me.username}'s` : "Your"} Profile</h2>
           </div>
-          <div className="col-12 col-md-6">
+          <div className='col-12 col-md-6'>
             <div className="card min-vh-50">
-              <div className="chart-container container-fluid">
-                <Bar className="flex-grow" options={options} data={chartData} />
+              <div className='chart-container container-fluid' >
+                <Bar className='flex-grow'
+                  options={options}
+                  data={chartData}
+                  style={{ height: '100%', width: '100%' }}
+                />
               </div>
             </div>
           </div>
-     
+
           {/* Bottom in mobile view // Right in desktop view */}
-          <div className="col-12 col-md-6">
+          <div className='col-12 col-md-6'>
             <div className="card">
-              <div className="row">
-                <div className="col-12">
+              <div className='row'>
+                <div className='col-12'>
                   {renderButtons()}
+                  {findAvg()}
+                  <p>{category === 'All Topics' ? `Average total score: ${average}` : `Average for ${category}: ${catAverage}`}</p>
                   <p>Your Scores for {category}:</p>
-                <Score 
-                  category={category} 
-                  allResults={allResults} 
-                  resultsByCategory={resultsByCategory}
-                />
+                  <Score
+                    category={category}
+                    allResults={allResults}
+                    resultsByCategory={resultsByCategory}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div></div>
       <div>
-      <div className="customProfile">
-        <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
-        <div>
-          {renderCurrentUserInfo()}
-          {renderUserList()}
-        </div>
       </div>
-    </div>
     </main>
   );
 };
