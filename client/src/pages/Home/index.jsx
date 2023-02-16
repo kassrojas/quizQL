@@ -24,6 +24,7 @@ import {
 } from "../../utils/queries";
 import Auth from "../../utils/auth";
 // Components
+import './index.css';
 import Score from "../../components/Score";
 
 ChartJS.register(
@@ -111,7 +112,7 @@ const Home = () => {
         {categoryList.map((category) => (
           <button
             onClick={getCategory}
-            className="btn btn-primary m-1"
+            className="homeBtn btn m-1"
             key={category}
             value={category}
           >
@@ -120,7 +121,7 @@ const Home = () => {
         ))}
         <button
           onClick={getCategory}
-          className="btn btn-primary m-1"
+          className="btn homeBtn m-1"
           key="All Topics"
           value={"All Topics"}
         >
@@ -199,31 +200,34 @@ const Home = () => {
           </div>
 
           {/* Bottom in mobile view // Right in desktop view */}
-          <div className="col-12">
-            <div className="card p-3 my-3">
-              <div className="row">
-                <div className="col-12">
-                  {renderButtons()}
-                  {findAvg()}
-                  <p>
-                    {category === "All Topics"
-                      ? `Average total score: ${parseFloat(average).toFixed(2)}`
-                      : `Average for ${category}: ${catAverage}`}
-                  </p>
-                  <p>Your Scores for {category}:</p>
-                  <Score
-                    category={category}
-                    allResults={allResults}
-                    resultsByCategory={resultsByCategory}
-                  />
-                </div>
+          <div className="container">
+            <div className="col-12">
+              <div className="col-12 card p-3 my-3 homeCard text-light">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-12">
+                      {renderButtons()}
+                      {findAvg()}
+                      <p>
+                        {category === "All Topics"
+                          ? `Average total score: ${parseFloat(average).toFixed(2)}`
+                          : `Average for ${category}: ${catAverage}`}
+                      </p>
+                      <p>Your Scores for {category}:</p>
+                      <Score
+                        category={category}
+                        allResults={allResults}
+                        resultsByCategory={resultsByCategory}
+                      />
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div></div>
-    </main>
+    </div>
+    </main >
   );
 };
 

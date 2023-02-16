@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const { resultsLoading, data: resultsData } = useQuery(QUERY_ALLRESULTS);
   const result = resultsData?.allResults || [];
   console.log(result);
-
+  
   return (
     <div className="container">
       <div className="row">

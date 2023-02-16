@@ -7,7 +7,8 @@ import { QUERY_ME, QUERY_QUESTIONS } from "../../utils/queries";
 import { ADD_SCORE } from "../../utils/mutations";
 // Components
 import Question from "../../components/Question/index";
-import Result from "../Result/index";
+import Result from "../Result";
+import "./index.css"
 
 const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,23 +20,23 @@ const Quiz = () => {
   const [addScore, { error: scoreError }] = useMutation(ADD_SCORE);
 
   const { topic } = useParams();
-  const retakeCategory = topic;
   const category = topic.slice(1);
+  const retakeCategory = topic;
 
+  // Query current user
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
 
   const user = meData?.me || {};
   const userId = user._id;
 
+  // Query questions by category
   const { loading, data } = useQuery(QUERY_QUESTIONS, {
     variables: { category },
   });
 
   const questions = data?.searchQuestions || [];
 
-  console.log("index", currentIndex);
-  console.log("length", questions.length);
-
+  // Submit answer handling
   const handleSubmit = () => {
     if (correct === null) {
       setError("Please choose an answer to continue.");
@@ -71,6 +72,7 @@ const Quiz = () => {
     );
   }
 
+  // Go to results after last question
   if (currentIndex > questions.length - 1) {
     const finalScore = parseInt((score / questions.length) * 100);
     return (
@@ -84,6 +86,7 @@ const Quiz = () => {
 
   console.log("QUESTIONS", questions);
 
+  // Current question, current answer
   const selectedAnswers = [
     questions[currentIndex].incorrect_answers[0],
     questions[currentIndex].incorrect_answers[1],
@@ -93,8 +96,6 @@ const Quiz = () => {
   const selected = questions[currentIndex];
 
   const selectAnswer = (e) => {
-    console.log("ANSWER", questions[currentIndex].correct_answer);
-    console.log("SELECTED", e.target.value);
     setCorrect(questions[currentIndex].correct_answer === e.target.value);
   };
 
@@ -103,7 +104,7 @@ const Quiz = () => {
     const snippet = selected.snippet;
     const answers = selectedAnswers;
     return (
-      <div>
+      <>
         <Question
           score={score}
           selectAnswer={selectAnswer}
@@ -117,7 +118,7 @@ const Quiz = () => {
         <button
           onClick={() => handleSubmit()}
           type="submit"
-          className="btn btn-primary mx-3"
+          className="btn submitCustomCss mx-3"
         >
           Submit
         </button>
@@ -126,7 +127,7 @@ const Quiz = () => {
             <p>{error}</p>
           </div>
         )}
-      </div>
+      </>
     );
   }
 
