@@ -1,0 +1,7 @@
+.titleCss {
+  color: rgba(249, 220, 196) ;
+}
+
+.titleCss:hover {
+  color: white;
+}
