@@ -16,39 +16,10 @@ import Auth from "../../utils/auth";
 import Score from '../../components/Score'
 import UserList from "../../components/UserList";
 
-// import Auth from '../utils/auth';
-// import { QUERY_USERS, SEARCH_USERS } from '../utils/queries';
-// Components
-// import UserList from '../components/UserList';
+
 
 const Home = () => {
-  // const { loading, data } = useQuery(QUERY_USERS);
-  // const [searchUsers, { data: searchData }] = useLazyQuery(SEARCH_USERS);
-  // const users = data?.users || [];
-  // const searchResults = searchData?.searchUsers || [];
-  // const inputRef = useRef();
 
-  // const renderUserList = () => {
-  //   if (loading) {
-  //     return <h2>Loading...</h2>
-  //   } else {
-  //     return <UserList users={users} title="List of Users" />
-  //   }
-  // }
-
-  // const renderUsername = () => {
-  //   if (!Auth.loggedIn()) return null;
-  //   return Auth.getProfile().data.username;
-  // }
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   await searchUsers({
-  //     variables: {
-  //       term: inputRef.current.value
-  //     }
-  //   });
-  // }
   const [category, setCategory] = useState('All Topics');
   console.log(category);
 
@@ -140,24 +111,6 @@ const Home = () => {
     )
   }
 
-
-  const renderUserList = () => {
-    if (usersLoading) return null;
-    // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter((o) => o._id !== user._id);
-    return <UserList users={notMeUsers} title="User List" />;
-  };
-
-  const renderCurrentUserInfo = () => {
-    if (id) return null;
-    return (
-      <ul>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
-      </ul>
-    );
-  };
-
   console.log('allResults:', allResults);
   console.log('resultsByCat:', resultsByCategory);
 
@@ -192,11 +145,7 @@ const Home = () => {
       </div>
       <div>
       <div className="customProfile">
-        <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
-        <div>
-          {renderCurrentUserInfo()}
-          {renderUserList()}
-        </div>
+      
       </div>
     </div>
     </main>

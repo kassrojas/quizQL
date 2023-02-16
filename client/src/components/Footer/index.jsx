@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import githubLogo from "../../assets/githubLogo.png";
+import githubLogo from "../../assets/github-logo.svg";
 
 const Footer = () => {
   return (

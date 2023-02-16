@@ -3,11 +3,11 @@ import { useQuery, useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 // Utilities
-import { QUERY_ME, QUERY_QUESTIONS } from '../utils/queries';
-import { ADD_SCORE } from "../utils/mutations";
+import { QUERY_ME, QUERY_QUESTIONS } from '../../utils/queries';
+import { ADD_SCORE } from "../../utils/mutations";
 // Components
-import Question from '../components/Question/index';
-import Result from "./Result";
+import Question from '../../components/Question/index';
+import Result from "../Result/index";
 
 const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
