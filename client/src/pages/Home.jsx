@@ -3,14 +3,15 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { Navigate, useParams } from "react-router-dom";
 import { Bar } from 'react-chartjs-2';
-import { 
-  Chart as ChartJS, 
-  CategoryScale, 
-  LinearScale, 
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
   BarElement,
   Title,
   Tooltip,
-  Legend } from 'chart.js';
+  Legend
+} from 'chart.js';
 import { faker } from '@faker-js/faker';
 // Utilities
 import {
@@ -28,39 +29,8 @@ import UserList from "../components/UserList";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-// import Auth from '../utils/auth';
-// import { QUERY_USERS, SEARCH_USERS } from '../utils/queries';
-// Components
-// import UserList from '../components/UserList';
 
 const Home = () => {
-  // const { loading, data } = useQuery(QUERY_USERS);
-  // const [searchUsers, { data: searchData }] = useLazyQuery(SEARCH_USERS);
-  // const users = data?.users || [];
-  // const searchResults = searchData?.searchUsers || [];
-  // const inputRef = useRef();
-
-  // const renderUserList = () => {
-  //   if (loading) {
-  //     return <h2>Loading...</h2>
-  //   } else {
-  //     return <UserList users={users} title="List of Users" />
-  //   }
-  // }
-
-  // const renderUsername = () => {
-  //   if (!Auth.loggedIn()) return null;
-  //   return Auth.getProfile().data.username;
-  // }
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   await searchUsers({
-  //     variables: {
-  //       term: inputRef.current.value
-  //     }
-  //   });
-  // }
   const [category, setCategory] = useState('All Topics');
   console.log(category);
 
@@ -153,22 +123,15 @@ const Home = () => {
   }
 
 
-  const renderUserList = () => {
-    if (usersLoading) return null;
-    // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter((o) => o._id !== user._id);
-    return <UserList users={notMeUsers} title="User List" />;
-  };
-
-  const renderCurrentUserInfo = () => {
-    if (id) return null;
-    return (
-      <ul>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
-      </ul>
-    );
-  };
+  // const renderCurrentUserInfo = () => {
+  //   if (id) return null;
+  //   return (
+  //     <ul>
+  //       <li>username: {user.username}</li>
+  //       <li>email: {user.email}</li>
+  //     </ul>
+  //   );
+  // };
 
   console.log('allResults:', allResults);
   console.log('resultsByCat:', resultsByCategory);
@@ -187,17 +150,6 @@ const Home = () => {
     },
   };
 
-  const labels = categoryList;
-  console.log(allResults);
-  
-  // const entryData = [
-  //   { category: 'Arrays', score: 10 },
-  //   { category: 'Objects', score: 20 },
-  //   { category: 'Functions', score: 30 }
-  // ]
-
-  // console.log(entryData);
-
   const chartData = {
     labels: categoryList,
     datasets: [
@@ -215,9 +167,14 @@ const Home = () => {
       {/* Top in mobile view // Left in desktop view */}
       <div className='container'>
         <div className='row'>
-          <div className='col-12 col-md-6 min-vh-50'>
-            <div className="card flex-grow">
-              <Bar className='flex-grow' options={options} data={chartData} />
+          <div className="customProfile">
+            <h2>Viewing {userId ? `${me.username}'s` : "Your"} Profile</h2>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className="card min-vh-50">
+              <div className='chart-container container-fluid' >
+                <Bar className='flex-grow' options={options} data={chartData} />
+              </div>
             </div>
           </div>
 
@@ -240,13 +197,6 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div className="customProfile">
-          <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
-          <div>
-            {renderCurrentUserInfo()}
-            {renderUserList()}
-          </div>
-        </div>
       </div>
     </main>
   );
