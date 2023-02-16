@@ -1,42 +1,55 @@
+import './index.css';
 // Node Modules
-import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
+import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
 import { Navigate, useParams } from "react-router-dom";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-
 // Utilities
 import { QUERY_USERS, 
          SEARCH_USERS,
          QUERY_CATEGORIES, 
          QUERY_ME, 
          QUERY_USERRESULTS, 
-         QUERY_USERRESULTS_BYCATEGORY ,
-        } from "../utils/queries";
-import Auth from "../utils/auth";
+         QUERY_USERRESULTS_BYCATEGORY 
+        } from '../../utils/queries';
+import Auth from "../../utils/auth";
 // Components
-import Score from "../components/Score";
-import UserList from "../components/UserList";
+import Score from '../../components/Score'
+import UserList from "../../components/UserList";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+// import Auth from '../utils/auth';
+// import { QUERY_USERS, SEARCH_USERS } from '../utils/queries';
+// Components
+// import UserList from '../components/UserList';
 
 const Home = () => {
-  const [category, setCategory] = useState("All Topics");
+  // const { loading, data } = useQuery(QUERY_USERS);
+  // const [searchUsers, { data: searchData }] = useLazyQuery(SEARCH_USERS);
+  // const users = data?.users || [];
+  // const searchResults = searchData?.searchUsers || [];
+  // const inputRef = useRef();
+
+  // const renderUserList = () => {
+  //   if (loading) {
+  //     return <h2>Loading...</h2>
+  //   } else {
+  //     return <UserList users={users} title="List of Users" />
+  //   }
+  // }
+
+  // const renderUsername = () => {
+  //   if (!Auth.loggedIn()) return null;
+  //   return Auth.getProfile().data.username;
+  // }
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   await searchUsers({
+  //     variables: {
+  //       term: inputRef.current.value
+  //     }
+  //   });
+  // }
+  const [category, setCategory] = useState('All Topics');
   console.log(category);
 
   const { id } = useParams();
@@ -66,23 +79,17 @@ const Home = () => {
   const categoryList = [...new Set(categoryListUntrimmed)];
 
   // Query All User Results
-  const { loading: resultLoading, data: resultData } = useQuery(
-    QUERY_USERRESULTS,
-    {
-      variables: { user: userId },
-    }
-  );
+  const { loading: resultLoading, data: resultData } = useQuery(QUERY_USERRESULTS, {
+    variables: { user: userId }
+  });
   const allResults = resultData?.userResults || [];
 
   //Query User Results by Category
-  const { loading: singleResultLoading, data: singleResultData } = useQuery(
-    QUERY_USERRESULTS_BYCATEGORY,
-    {
-      variables: { user: userId, category: category },
-    }
-  );
+  const { loading: singleResultLoading, data: singleResultData } = useQuery(QUERY_USERRESULTS_BYCATEGORY, {
+    variables: { user: userId, category: category }
+  })
   const resultsByCategory = singleResultData?.userResultsByCategory || [];
-
+  
 
 
   // redirect to personal profile page if username is yours
@@ -103,9 +110,10 @@ const Home = () => {
     );
   }
 
+
   const getCategory = (e) => {
-    setCategory((category) => (category = e.target.value));
-  };
+    setCategory(category => category = e.target.value);
+  }
   
   const renderButtons = () => {
     return (
@@ -120,16 +128,6 @@ const Home = () => {
           {category}
         </button>
         )}
-        {categoryList.map((category) => (
-          <button
-            onClick={getCategory}
-            className="btn btn-primary"
-            key={category}
-            value={category}
-          >
-            {category}
-          </button>
-        ))}
         <button
           onClick={getCategory}
           className='btn btn-primary'
@@ -143,65 +141,42 @@ const Home = () => {
   }
 
 
-  // const renderCurrentUserInfo = () => {
-  //   if (id) return null;
-  //   return (
-  //     <ul>
-  //       <li>username: {user.username}</li>
-  //       <li>email: {user.email}</li>
-  //     </ul>
-  //   );
-  // };
-
-  console.log("allResults:", allResults);
-  console.log("resultsByCat:", resultsByCategory);
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "User Score Chart",
-      },
-    },
+  const renderUserList = () => {
+    if (usersLoading) return null;
+    // Only renders users who's profile we're not currently viewing
+    const notMeUsers = users.filter((o) => o._id !== user._id);
+    return <UserList users={notMeUsers} title="User List" />;
   };
 
-  const chartData = {
-    labels: categoryList,
-    datasets: [
-      {
-        label: "All Scores",
-        data: allResults.map((row) => row.score),
-        borderColor: "rgb(255,0, 0)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-    ],
+  const renderCurrentUserInfo = () => {
+    if (id) return null;
+    return (
+      <ul>
+        <li>username: {user.username}</li>
+        <li>email: {user.email}</li>
+      </ul>
+    );
   };
+
+  console.log('allResults:', allResults);
+  console.log('resultsByCat:', resultsByCategory);
 
   return (
     <main>
       {/* Top in mobile view // Left in desktop view */}
-      <div className="container">
-        <div className="row">
-          <div className="customProfile">
-            <h2>Viewing {userId ? `${me.username}'s` : "Your"} Profile</h2>
-          </div>
-          <div className="col-12 col-md-6">
-            <div className="card min-vh-50">
-              <div className="chart-container container-fluid">
-                <Bar className="flex-grow" options={options} data={chartData} />
-              </div>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-12 col-md-6'>
+            <div className="card">
+               <h4>ChartJS here</h4>
             </div>
           </div>
      
           {/* Bottom in mobile view // Right in desktop view */}
-          <div className="col-12 col-md-6">
+          <div className='col-12 col-md-6'>
             <div className="card">
-              <div className="row">
-                <div className="col-12">
+              <div className='row'>
+                <div className='col-12'>
                   {renderButtons()}
                   <p>Your Scores for {category}:</p>
                 <Score 
@@ -215,7 +190,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div></div>
       <div>
       <div className="customProfile">
         <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>

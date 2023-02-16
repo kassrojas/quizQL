@@ -16,7 +16,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import Topic from "./pages/Topic";
-import About from "./pages/About";
+import About from "./components/About";
 import Contact from "./pages/Contact";
 import Result from "./pages/Result";
 import Leaderboard from "./pages/Leaderboard";

@@ -1,0 +1,8 @@
+@media screen and (max-width: 640px) {
+
+    .container-about {
+        overflow: scroll;
+        margin-bottom: 13%;
+    }
+
+}
