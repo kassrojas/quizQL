@@ -1,8 +1,8 @@
 :root {
-   --btn-bg-color: rgba(249, 220, 196, 0.5);
-   --btn-hover-bg: rgb(255, 243, 176, 0.9);
-   --btn-text: rgb(250, 237, 202);
-   --btn-hover-text: rgb(68, 19, 21);
+    --bg-color: rgba(249, 220, 196, 0.5);
+    --bg-hover: rgb(255, 243, 176, 0.9);
+    --custom-text: rgb(248, 247, 255);
+    --custom-text-hover: rgb(68, 19, 21);
 }
 
 .resultsPage {
@@ -10,25 +10,17 @@
 }
 
 .btn-custom {
-    background-color: var(--btn-bg-color);
-    color: var(--btn-text);
+    background-color: var(--bg-color);
+    color: var(--custom-text);
     font-size: large;
     width: 70%;
     margin: 8px;
 }
 
 .btn-custom:hover {
-    background-color: var(--btn-hover-bg);
-    color: var(--btn-hover-text);
-}
-
-/* retake-css only affects text color */
-.retake-css {
-    color: var(--btn-text);
-}
-
-.retake-css:hover {
-    color: var(--btn-hover-text);
+    background-color: var(--bg-hover);
+    color: var(--custom-text-hover);
+    box-shadow: 0px 0px 10px 0px rgba(255, 123, 0);
 
 }
 
