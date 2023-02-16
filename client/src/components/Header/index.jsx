@@ -29,7 +29,7 @@ const Header = () => {
     <header>
       <h1 className="p-2">
         <a href="/me" className="titleCss">
-          Let's Get Quizzicle
+          Let's Get Quizzical
         </a>
       </h1>
       {/* <div> */}
