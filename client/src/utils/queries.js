@@ -82,6 +82,7 @@ export const QUERY_ALLRESULTS = gql`
   query allResults {
     allResults {
       score
+      category
       user {
         username
       }

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { QUERY_ME, QUERY_QUESTIONS } from '../utils/queries';
 import { ADD_SCORE } from "../utils/mutations";
 // Components
-import Question from '../components/Question/index';
+import Question from './Question';
 import Result from "./Result";
 
 const Quiz = () => {
@@ -19,7 +19,6 @@ const Quiz = () => {
   const [addScore, { error: scoreError }] = useMutation(ADD_SCORE);
 
   const { topic } = useParams();
-  const retakeCategory = topic
   const category = topic.slice(1);
 
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
@@ -33,6 +32,10 @@ const Quiz = () => {
 
   const questions = data?.searchQuestions || [];
 
+  const resetQuiz = () => {
+    setCurrentIndex(currentIndex => currentIndex = 0);
+  }
+
   console.log('index', currentIndex);
   console.log('length', questions.length);
   
@@ -45,17 +48,16 @@ const Quiz = () => {
     if (currentIndex < questions.length - 1) {
       if (correct) setScore(score => 1 + score);
 
-      setCorrect(null);
+      setCorrect(false);
       setError('');
       setCurrentIndex(currentIndex => 1 + currentIndex);
       setCheckedIndex(-1);
 
     } else if (currentIndex === questions.length - 1) {
       console.log('category', category)
-      const finalScore = parseInt((score / questions.length) * 100);
       try {
         const { data } = addScore({
-          variables: { user: userId, score: finalScore, category: category }
+          variables: { user: userId, score: score, category: category }
         }) 
       } catch (err) {
         console.error(err);
@@ -74,8 +76,7 @@ const Quiz = () => {
   }
   
   if (currentIndex > questions.length - 1) {
-    const finalScore = parseInt((score / questions.length) * 100);
-    return <Result finalScore={finalScore} total={questions.length} retakeCategory={retakeCategory} />
+    return <Result score={score} total={questions.length} reset={resetQuiz} />
   }
   
   console.log('QUESTIONS', questions);
@@ -108,7 +109,6 @@ const Quiz = () => {
           answers={answers}
           setCheckedIndex={setCheckedIndex}
           checkedIndex={checkedIndex}
-          currentIndex={currentIndex}
         />
         <button onClick={() => handleSubmit()} type="submit" className="btn btn-primary">Submit</button>
         {error && (
