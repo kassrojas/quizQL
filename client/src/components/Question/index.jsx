@@ -31,7 +31,6 @@ const Question = (props) => {
         <div className="card-body">
           <h4>{`${props.currentIndex + 1}. ${props.question}`}</h4>
         </div>
-
         <div height="900">
           {props.snippet ? (
             <img src={props.snippet} className="flex-grow" />

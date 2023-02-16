@@ -1,4 +1,3 @@
-import "./index.css";
 // Node Modules
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
@@ -13,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+
 // Utilities
 import {
   QUERY_USERS,
@@ -25,7 +25,7 @@ import {
 import Auth from "../../utils/auth";
 // Components
 import Score from "../../components/Score";
-import UserList from "../../components/UserList";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -37,6 +37,7 @@ ChartJS.register(
 
 const Home = () => {
   const [category, setCategory] = useState("All Topics");
+  console.log(category);
 
   const { id } = useParams();
 
@@ -53,6 +54,7 @@ const Home = () => {
   const users = usersData?.users || [];
 
   const userId = me._id;
+  console.log(userId);
 
   if (error) console.log(error);
 
@@ -109,7 +111,7 @@ const Home = () => {
         {categoryList.map((category) => (
           <button
             onClick={getCategory}
-            className="btn btn-primary"
+            className="btn btn-primary m-1"
             key={category}
             value={category}
           >
@@ -118,7 +120,7 @@ const Home = () => {
         ))}
         <button
           onClick={getCategory}
-          className="btn btn-primary"
+          className="btn btn-primary m-1"
           key="All Topics"
           value={"All Topics"}
         >
@@ -171,6 +173,10 @@ const Home = () => {
     var catAverage = 0;
   }
 
+  function findAvg() {
+    return <p></p>;
+  }
+
   return (
     <main>
       {/* Top in mobile view // Left in desktop view */}
@@ -179,9 +185,9 @@ const Home = () => {
           <div className="customProfile">
             <h2>Viewing {userId ? `${me.username}'s` : "Your"} Profile</h2>
           </div>
-          <div className="col-12">
-            <div className="card p-3 min-vh-50">
-              <div className="chart-container">
+          <div className="col-12 col-md-6">
+            <div className="card min-vh-50">
+              <div className="chart-container container-fluid">
                 <Bar
                   className="flex-grow"
                   options={options}
@@ -193,14 +199,15 @@ const Home = () => {
           </div>
 
           {/* Bottom in mobile view // Right in desktop view */}
-          <div className="col-12">
-            <div className="card p-3">
+          <div className="col-12 col-md-6">
+            <div className="card">
               <div className="row">
                 <div className="col-12">
                   {renderButtons()}
+                  {findAvg()}
                   <p>
                     {category === "All Topics"
-                      ? `Average total score: ${average}`
+                      ? `Average total score: ${parseFloat(average).toFixed(2)}`
                       : `Average for ${category}: ${catAverage}`}
                   </p>
                   <p>Your Scores for {category}:</p>
