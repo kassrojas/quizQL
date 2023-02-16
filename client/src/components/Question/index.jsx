@@ -31,42 +31,24 @@ const Question = (props) => {
         <div className="card-body">
           <h4>{`${props.currentIndex + 1}. ${props.question}`}</h4>
         </div>
-<<<<<<< HEAD
         <div height="900">
           {props.snippet ? (
             <img src={props.snippet} className="flex-grow" />
           ) : (
             <></>
           )}
-=======
-
-        <div height="900">
-          {props.snippet
-            ? <img src={props.snippet} className="flex-grow" />
-            : <></>
-          }
->>>>>>> main
         </div>
 
         <div>
           <ul>
             {props.answers.map((answer, index) => (
               <div className="form-check">
-<<<<<<< HEAD
-                <input
-                  onChange={(event) => handleChange(event, index)}
-                  className="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="answer1"
-=======
                 <input 
                   onChange={(event) => handleChange(event, index)} 
                   className="d-flex justify-content-center form-check-input" 
                   type="radio" 
                   name="exampleRadios" 
                   id="answer1" 
->>>>>>> main
                   value={answer}
                   checked={index === props.checkedIndex}
                 />
