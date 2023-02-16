@@ -27,11 +27,9 @@ const Result = (props) => {
             <h1 className="my-4">Score: {props.finalScore} %</h1>
             <div className="row justify-content-center">
               <a>
-                <button className="btn btn-custom">
-                  <a className="retake-css" href={props.retakeCategory}>
-                    Retake Quiz
-                  </a>
-                </button>
+                <a className="retake-css" href={props.retakeCategory}>
+                  <button className="btn btn-custom">Retake Quiz</button>
+                </a>
               </a>
               <a href="/topics">
                 <button className="btn btn-custom">Take New Quiz</button>
