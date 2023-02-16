@@ -11,8 +11,8 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <ul className="navbar-nav mr-auto">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+          <ul className="navbar-nav mr-auto flex-grow-1">
             <li className="nav-item active">
               <a className="nav-link" href="/me">
                 {Auth.getProfile().data.username}'s Profile
@@ -28,12 +28,11 @@ function Navbar() {
                 Leaderboard
               </a>
             </li>
-            <li className="nav-item">
-              <button onClick={logout} className="btn btn-danger">
-                Logout
-              </button>
-            </li>
+            <li className="nav-item"></li>
           </ul>
+          <button onClick={logout} className="btn btn-danger">
+            Logout
+          </button>
         </nav>
       </>
     );

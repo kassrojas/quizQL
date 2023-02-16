@@ -182,12 +182,12 @@ const Home = () => {
       {/* Top in mobile view // Left in desktop view */}
       <div className="container">
         <div className="row">
-          <div className="customProfile">
+          <div className="customProfile text-white">
             <h2>Viewing {userId ? `${me.username}'s` : "Your"} Profile</h2>
           </div>
-          <div className="col-12 col-md-6">
-            <div className="card min-vh-50">
-              <div className="chart-container container-fluid">
+          <div className="col-12">
+            <div className="card p-3 my-3 min-vh-50">
+              <div className="chart-container">
                 <Bar
                   className="flex-grow"
                   options={options}
@@ -199,8 +199,8 @@ const Home = () => {
           </div>
 
           {/* Bottom in mobile view // Right in desktop view */}
-          <div className="col-12 col-md-6">
-            <div className="card">
+          <div className="col-12">
+            <div className="card p-3 my-3">
               <div className="row">
                 <div className="col-12">
                   {renderButtons()}
