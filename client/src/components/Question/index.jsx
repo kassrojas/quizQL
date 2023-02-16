@@ -32,7 +32,7 @@ const Question = (props) => {
     <main>
       <div className="card">
         <div className="card-body">
-          <h4>{props.question}</h4>
+          <h4>{`${props.currentIndex + 1}. ${props.question}`}</h4>
         </div>
         {/* TODO: condition to show snippet only if exists */}
         <div height="900">
