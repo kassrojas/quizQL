@@ -1,8 +1,6 @@
 import React from "react";
-import './index.css';
-import { Link } from "react-router-dom";
-
 import Auth from "../../utils/auth";
+import "./index.css";
 
 function Navbar() {
   const logout = (event) => {
@@ -17,17 +15,17 @@ function Navbar() {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <a className="nav-link" href="/me">
-                <h4>{Auth.getProfile().data.username}'s Profile</h4>
+                {Auth.getProfile().data.username}'s Profile
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/topic">
-                <h4>Quiz Topics</h4>
+              <a className="nav-link" href="/topics">
+                Take A Quiz
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/leaderboard">
-                <h4>Leaderboard</h4>
+                Leaderboard
               </a>
             </li>
             <li className="nav-item">
@@ -44,16 +42,18 @@ function Navbar() {
   return (
     <>
       <nav className="navbar justify-content-center">
-        <li className="nav-item">
-          <a className="nav-link" href="/signup">
-            <h4 className="text-white m-2">Sign Up</h4>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/login">
-            <h4 className="text-white m-2">Login</h4>
-          </a>
-        </li>
+        <a href="/signup" className="nav-link ">
+          <h4 className="m-2 customCss">
+            Sign Up
+            <hr />
+          </h4>
+        </a>
+        <a className="nav-link " href="/login">
+          <h4 className="m-2 customCss">
+            Login
+            <hr />
+          </h4>
+        </a>
       </nav>
     </>
   );

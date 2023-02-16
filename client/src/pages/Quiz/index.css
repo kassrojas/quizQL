@@ -5,23 +5,15 @@
   --custom-text-hover: rgb(68, 19, 21);
 }
 
-a:link { 
-  text-decoration: none; 
-}
-
-.topicsBtn:hover { 
+.submitCustomCss:hover { 
   background-color: var(--bg-hover);
   color: var(--custom-text-hover);
   box-shadow: 0px 0px 10px 0px rgba(255, 123, 0);
 }
 
-.topicsBtn {
+.submitCustomCss {
   background-color: var(--bg-color);
   color: var(--custom-text);
   margin: 6px;
   font-size: 20px;
-}
-
-.topicCard {
-  background-color: rgba(0, 18, 25, 0.1);
 }

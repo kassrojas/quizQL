@@ -5,6 +5,8 @@ import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
+import "./Quiz/index.css";
+
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -73,7 +75,7 @@ const Login = () => {
               />
             </div>
             <div className="col p-2">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn submitCustomCss">
                 Login
               </button>
             </div>
