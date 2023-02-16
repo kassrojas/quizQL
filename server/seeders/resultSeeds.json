@@ -1,46 +1,57 @@
 [
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 100
+      "score": 100,
+      "category": "Arrays" 
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 90
+      "score": 90,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 80
+      "score": 80,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 70
+      "score": 70,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 60
+      "score": 60,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 50
+      "score": 50,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 40
+      "score": 40,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 30
+      "score": 30,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 20
+      "score": 20,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 10
+      "score": 10,
+      "category": "Arrays"
     },
     {
       "user": "63e9599acc1195737bf5364d",
-      "score": 0
+      "score": 0,
+      "category": "Arrays"
     }
   ]

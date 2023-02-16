@@ -1,9 +1,8 @@
 import React from "react";
-import './index.css';
 
 const About = () => {
   return (
-    <div className="container-about">
+    <div className="container">
       <div className="row justify-content-center">
         <div className="col-6 text-center">
           <h2 className="text-white my-4">About Us</h2>
@@ -17,7 +16,7 @@ const About = () => {
             <hr /> A group of junior developers looking to make an impact in the
             web developement space.
           </p>
-          <p className="application text-white fs-5">
+          <p className="text-white fs-5">
             <hr />
             <h4>Our Application</h4>
             <hr /> A free and easy to use coding quiz application made for

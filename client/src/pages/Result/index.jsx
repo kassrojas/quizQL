@@ -8,12 +8,11 @@ const Result = (props) => {
   const user = data?.me || {};
   const userId = user._id;
 
-  const { resultsLoading, data: resultsData } = useQuery(QUERY_USERRESULTS, {
-    variables: { userId },
-  });
+  const { resultsLoading, data: resultsData } = useQuery(QUERY_USERRESULTS);
 
   const result = resultsData?.userResults || [];
   console.log(result);
+
 
   return (
     <>
@@ -26,11 +25,9 @@ const Result = (props) => {
             </h1>
             <h1 className="my-4">Score: {props.finalScore} %</h1>
             <div className="row justify-content-center">
-              <a>
                 <a className="retake-css" href={props.retakeCategory}>
                   <button className="btn btn-custom">Retake Quiz</button>
                 </a>
-              </a>
               <a href="/topics">
                 <button className="btn btn-custom">Take New Quiz</button>
               </a>

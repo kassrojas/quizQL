@@ -44,10 +44,13 @@ const resolvers = {
       return Question.find().populate("category").sort({ category: "asc" });
     },
     allResults: async () => {
-      return Result.find().populate("user").sort({ score: "desc" });
+      return Result.find()
+        .populate("user")
+        .sort({ score: "desc" })
+        .limit(30);
     },
-    userResults: async (_, args) => {
-      return Result.find({ user: args.user });
+    userResults: async (_, args, context) => {
+      return Result.find({ user: context.user._id });
     },
     userResultsByCategory: async (_, args) => {
       return Result.find({ user: args.user, category: args.category });
