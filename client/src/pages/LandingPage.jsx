@@ -5,34 +5,30 @@ const LandingPage = () => {
   return (
     <main>
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center align-items-center">
           <div className="col-12 col-md-6">
-            <div className="card container-fluid">
-              <video width="400" controls autoPlay loop>
-                <source src="/images/matrix_background.mov" type="video/mp4"/>
-                  </video>
-                </div>
+            <div className="card">
+              <div className="card-body">
+            <div className="card container-fluid bg-transparent border-0">
+              <h2>Practice Makes Perfect!</h2>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/landing_gif.gif`}
+                className="card-img-top"
+                alt="Landing Gif"
+                
+              />
             </div>
-
-            <div className="col-12 col-md-6">
-              <div className="card">
-                <img
-                  src="https://via.placeholder.com/300"
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <Link to="/topics" className="btn btn-primary">
-                    Take a Quiz
-                  </Link>
-                  <Link to="/login" className="btn btn-primary">
-                    Login
-                  </Link>
-                </div>
+                <Link to="/topics" className="btn btn-primary m-3">
+                  Take a Quiz
+                </Link>
+                <Link to="/login" className="btn btn-primary">
+                  Login
+                </Link>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </main>
   );
 };
