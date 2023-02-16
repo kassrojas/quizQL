@@ -48,7 +48,6 @@ export const QUERY_CATEGORIES = gql`
   }
 `;
 
-
 export const QUERY_QUESTIONS = gql`
   query searchQuestions($category: String!) {
     searchQuestions(category: $category) {
@@ -76,15 +75,16 @@ export const QUERY_USERRESULTS_BYCATEGORY = gql`
       category
     }
   }
-`
+`;
 
 export const QUERY_ALLRESULTS = gql`
   query allResults {
     allResults {
       score
+      category
       user {
         username
       }
     }
   }
-`
+`;
