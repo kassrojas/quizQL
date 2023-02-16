@@ -60,8 +60,8 @@ export const QUERY_QUESTIONS = gql`
 `;
 
 export const QUERY_USERRESULTS = gql`
-  query userResults($user: String!) {
-    userResults(user: $user) {
+  query userResults {
+    userResults {
       score
       category
     }

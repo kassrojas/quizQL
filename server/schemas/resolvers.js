@@ -49,8 +49,8 @@ const resolvers = {
         .sort({ score: "desc" })
         .limit(30);
     },
-    userResults: async (_, args) => {
-      return Result.find({ user: args.user });
+    userResults: async (_, args, context) => {
+      return Result.find({ user: context.user._id });
     },
     userResultsByCategory: async (_, args) => {
       return Result.find({ user: args.user, category: args.category });

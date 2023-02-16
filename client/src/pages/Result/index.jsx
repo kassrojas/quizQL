@@ -8,9 +8,7 @@ const Result = (props) => {
   const user = data?.me || {};
   const userId = user._id;
 
-  const { resultsLoading, data: resultsData } = useQuery(QUERY_USERRESULTS, {
-    variables: { userId },
-  });
+  const { resultsLoading, data: resultsData } = useQuery(QUERY_USERRESULTS);
 
   const result = resultsData?.userResults || [];
   console.log(result);
