@@ -10,7 +10,7 @@ const About = () => {
         </div>
       </div>
       <div className="row justify-content-center">
-        <div className="col-6 text-center">
+        <div className="col-8 col-md-10 col-sm-12 col-xs-10 col-xxs-10 text-center">
           <p className="text-white fs-5">
             <hr />
             <h4>Who We Are</h4>

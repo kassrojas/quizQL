@@ -14,14 +14,13 @@ import {
 } from "chart.js";
 
 // Utilities
-import {
-  QUERY_USERS,
-  SEARCH_USERS,
-  QUERY_CATEGORIES,
-  QUERY_ME,
-  QUERY_USERRESULTS,
-  QUERY_USERRESULTS_BYCATEGORY,
-} from "../utils/queries";
+import { QUERY_USERS, 
+         SEARCH_USERS,
+         QUERY_CATEGORIES, 
+         QUERY_ME, 
+         QUERY_USERRESULTS, 
+         QUERY_USERRESULTS_BYCATEGORY ,
+        } from "../utils/queries";
 import Auth from "../utils/auth";
 // Components
 import Score from "../components/Score";
@@ -62,8 +61,8 @@ const Home = () => {
   // Query Categories
   const { categoryLoading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const categories = categoryData?.searchCategories || [];
-
-  const categoryListUntrimmed = categories.map((c) => c.category);
+  
+  const categoryListUntrimmed = categories.map(c => c.category);
   const categoryList = [...new Set(categoryListUntrimmed)];
 
   // Query All User Results
@@ -83,6 +82,8 @@ const Home = () => {
     }
   );
   const resultsByCategory = singleResultData?.userResultsByCategory || [];
+
+
 
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
@@ -105,10 +106,20 @@ const Home = () => {
   const getCategory = (e) => {
     setCategory((category) => (category = e.target.value));
   };
-
+  
   const renderButtons = () => {
     return (
       <>
+        {categoryList.map(category =>    
+        <button
+          onClick={getCategory}
+          className='btn btn-primary'
+          key={category}
+          value={category}
+        >
+          {category}
+        </button>
+        )}
         {categoryList.map((category) => (
           <button
             onClick={getCategory}
@@ -121,15 +132,16 @@ const Home = () => {
         ))}
         <button
           onClick={getCategory}
-          className="btn btn-primary"
-          key="All Topics"
-          value={"All Topics"}
-        >
+          className='btn btn-primary'
+          key='All Topics'
+          value={'All Topics'}
+          >
           All Topics
         </button>
       </>
-    );
-  };
+    )
+  }
+
 
   // const renderCurrentUserInfo = () => {
   //   if (id) return null;
@@ -184,7 +196,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-
+     
           {/* Bottom in mobile view // Right in desktop view */}
           <div className="col-12 col-md-6">
             <div className="card">
@@ -192,11 +204,11 @@ const Home = () => {
                 <div className="col-12">
                   {renderButtons()}
                   <p>Your Scores for {category}:</p>
-                  <Score
-                    category={category}
-                    allResults={allResults}
-                    resultsByCategory={resultsByCategory}
-                  />
+                <Score 
+                  category={category} 
+                  allResults={allResults} 
+                  resultsByCategory={resultsByCategory}
+                />
                 </div>
               </div>
             </div>
@@ -204,6 +216,15 @@ const Home = () => {
         </div>
       </div>
       <div></div>
+      <div>
+      <div className="customProfile">
+        <h2>Viewing {id ? `${user.username}'s` : "Your"} Profile</h2>
+        <div>
+          {renderCurrentUserInfo()}
+          {renderUserList()}
+        </div>
+      </div>
+    </div>
     </main>
   );
 };
