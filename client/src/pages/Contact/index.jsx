@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import emailValidator from "../utils/emailValidator";
+import emailValidator from "../../utils/emailValidator";
+import "./index.css"
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -95,7 +96,7 @@ export default function Contact() {
             <button
               onClick={handleFormSubmit}
               type="submit"
-              className="btn btn-primary mt-3"
+              className="btn contactBtn mt-3"
             >
               Submit
             </button>
