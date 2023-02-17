@@ -15,7 +15,8 @@ const Footer = () => {
             Contact Us
           </Link>
         </div>
-        <div className="col-1 d-flex flex-end m-2 bg-image">
+        {/* <div className="col-1 d-flex flex-end m-2 bg-image"> */}
+        <div className="col-1 m-2 bg-image">
           <a
             href="https://github.com/kassrojas/quizQL"
             className=""
